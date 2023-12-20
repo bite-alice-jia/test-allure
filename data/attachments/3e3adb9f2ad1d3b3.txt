@@ -1,0 +1,7 @@
+INFO     root:uidriver.py:157 Open URL：https://testfeb23.sit1.stream.bite.dev/auth/sign-in
+INFO     root:uidriver.py:258 Entering text 111 into mat-form-field:has-text('Email') >> input
+INFO     root:uidriver.py:258 Entering text 111 into mat-form-field:has-text('Password') >> input
+INFO     root:uidriver.py:552 Click element：button:has-text('Sign in'):visible
+INFO     root:uidriver.py:606 Getting element text for：mat-form-field:has-text('Email') >> mat-error
+INFO     root:uidriver.py:180 Finding element mat-form-field:has-text('Email') >> mat-error
+INFO     root:uidriver.py:621 Got text：Invalid email address
