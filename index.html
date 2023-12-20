@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Links to Sibling Folders</title>
+    <title>Allure Reports</title>
 </head>
 <body>
-
+<h1>Allure Reports</h1>
 <script>
     // 获取当前页面 URL 的路径部分
     var path = window.location.pathname;
 
     // 发起 Ajax 请求获取同级目录的文件夹名称数组
     var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             var siblingFolders = JSON.parse(xhr.responseText).directories;
             displaySiblingFolders(siblingFolders);
@@ -26,7 +26,7 @@
     // 生成链接并显示同级目录的文件夹名称
     function displaySiblingFolders(siblingFolders) {
         var ul = document.createElement("ul");
-        siblingFolders.forEach(function(folder) {
+        siblingFolders.forEach(function (folder) {
             var folderURL = path.substring(0, path.lastIndexOf('/')) + "/" + folder + "/";
             var li = document.createElement("li");
             var a = document.createElement("a");
