@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Sibling Folder Names</title>
+</head>
+<body>
+
+<script>
+    // 获取当前页面 URL 的路径部分
+    var path = window.location.pathname;
+
+    // 获取同级目录的文件夹名称数组
+    var siblingFolders = getSiblingFolders(path);
+
+    // 显示同级目录的文件夹名称
+    document.write("<h1>Sibling Folders: " + siblingFolders.join(", ") + "</h1>");
+
+    // 获取同级目录的文件夹名称的函数
+    function getSiblingFolders(path) {
+        // 移除路径末尾的斜杠
+        path = path.replace(/\/$/, "");
+
+        // 使用斜杠分割路径
+        var pathSegments = path.split("/");
+
+        // 获取父级目录的路径
+        var parentPath = pathSegments.slice(0, -1).join("/");
+
+        // 获取同级目录的文件夹名称数组
+        var siblingFolders = pathSegments[pathSegments.length - 1];
+
+        return siblingFolders;
+    }
+</script>
+
+</body>
+</html>
