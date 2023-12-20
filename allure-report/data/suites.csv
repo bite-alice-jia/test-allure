@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Dec 20 10:51:51 CST 2023","Wed Dec 20 10:52:03 CST 2023","11933","Tests.TestCases.Stream_LP.Login","test_login_lp","TestLpLogin","","","Open MFA, Successful log in using correct username and password",""

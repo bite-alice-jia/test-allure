@@ -1,0 +1,30 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "children" : [ {
+    "name" : "ZhangSkrrrdeMBP",
+    "children" : [ {
+      "name" : "76064-MainThread",
+      "children" : [ {
+        "name" : "Open MFA, Successful log in using correct username and password",
+        "uid" : "abba8e48ba9219a",
+        "parentUid" : "3a670555618bfd46bbdbc6fddd0be80f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1703040711535,
+          "stop" : 1703040723468,
+          "duration" : 11933
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "3a670555618bfd46bbdbc6fddd0be80f"
+    } ],
+    "uid" : "7e8711d81b151406da37b4aea7e9208f"
+  } ],
+  "name" : "timeline"
+}

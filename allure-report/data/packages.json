@@ -1,0 +1,26 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "children" : [ {
+    "name" : "Tests.TestCases.Stream_LP.Login.test_login_lp",
+    "children" : [ {
+      "name" : "Open MFA, Successful log in using correct username and password",
+      "uid" : "abba8e48ba9219a",
+      "parentUid" : "c37db558a11a8a631804a930fcd57d0b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1703040711535,
+        "stop" : 1703040723468,
+        "duration" : 11933
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "Tests.TestCases.Stream_LP.Login.test_login_lp"
+  } ],
+  "name" : "packages"
+}

@@ -1,0 +1,34 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "children" : [ {
+    "name" : "Tests.TestCases.Stream_LP.Login",
+    "children" : [ {
+      "name" : "test_login_lp",
+      "children" : [ {
+        "name" : "TestLpLogin",
+        "children" : [ {
+          "name" : "Open MFA, Successful log in using correct username and password",
+          "uid" : "abba8e48ba9219a",
+          "parentUid" : "0650c105c722d97921db6ee285099d3a",
+          "status" : "passed",
+          "time" : {
+            "start" : 1703040711535,
+            "stop" : 1703040723468,
+            "duration" : 11933
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "newPassed" : false,
+          "newBroken" : false,
+          "retriesCount" : 0,
+          "retriesStatusChange" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "0650c105c722d97921db6ee285099d3a"
+      } ],
+      "uid" : "9e61f07e8bd1cbe62b6cf7c4cad6f401"
+    } ],
+    "uid" : "be855bc640cbe4177e96daa4e203006a"
+  } ],
+  "name" : "suites"
+}
