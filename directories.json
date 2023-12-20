@@ -1,3 +1,8 @@
 {
-  "directories": ["allure-report", "reports1"]
+  "directories": [
+    "reports1",
+    "allure-report",
+    ".git",
+    ".idea"
+  ]
 }
