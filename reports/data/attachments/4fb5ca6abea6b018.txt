@@ -1,0 +1,7 @@
+INFO     root:uidriver.py:157 Open URL：https://testfeb23.sit1.stream.bite.dev/auth/sign-in
+INFO     root:uidriver.py:258 Entering text robert2820231219@example.com into mat-form-field:has-text('Email') >> input
+INFO     root:uidriver.py:258 Entering text 111 into mat-form-field:has-text('Password') >> input
+INFO     root:uidriver.py:552 Click element：button:has-text('Sign in'):visible
+INFO     root:uidriver.py:606 Getting element text for：snack-bar-container >> nth=-1
+INFO     root:uidriver.py:180 Finding element snack-bar-container >> nth=-1
+INFO     root:uidriver.py:621 Got text：Email or password is incorrect.
