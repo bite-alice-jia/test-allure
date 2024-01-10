@@ -1,14 +1,7 @@
 {
   "directories": [
     {
-      "CUSTOM_TEST": [
-        "allure-report-20231226073155",
-        "allure-report-20231226071806",
-        "allure-report-20231226063649",
-        "allure-report-20231226061717",
-        "allure-report-20231226052337",
-        "allure-report-20231226034300"
-      ],
+      "CUSTOM_TEST": [],
       "UI_SMOKE_TEST": [
         "allure-report-20231226074955",
         "allure-report-20231226072506",

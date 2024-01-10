@@ -1,3 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Tue Dec 26 05:22:15 UTC 2023","Tue Dec 26 05:23:19 UTC 2023","64132","Tests.TestCases.Stream_GP.Asset.AssetAdd","test_add_asset","TestAddAsset","","","Create new Asset"," Add Asset "
-"passed","Tue Dec 26 05:21:46 UTC 2023","Tue Dec 26 05:22:15 UTC 2023","28695","Tests.TestCases.Stream_GP.Asset.AssetAdd","test_add_asset","TestAddAsset","","","Create new Asset",""

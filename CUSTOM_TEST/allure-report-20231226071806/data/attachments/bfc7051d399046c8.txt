@@ -1,8 +1,0 @@
-INFO     root:uidriver.py:157 Open URL：https://11automarch2023.sit1.stream.bite.dev/auth/sign-in
-INFO     root:uidriver.py:552 Click element：button:has-text('Sign in'):visible
-INFO     root:uidriver.py:606 Getting element text for：mat-form-field:has-text('Email') >> mat-error
-INFO     root:uidriver.py:180 Finding element mat-form-field:has-text('Email') >> mat-error
-INFO     root:uidriver.py:621 Got text：This field is required.
-INFO     root:uidriver.py:606 Getting element text for：mat-form-field:has-text('Password') >> mat-error
-INFO     root:uidriver.py:180 Finding element mat-form-field:has-text('Password') >> mat-error
-INFO     root:uidriver.py:621 Got text：This field is required.
