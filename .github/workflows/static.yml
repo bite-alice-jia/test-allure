@@ -38,14 +38,12 @@ jobs:
         with:
           # Upload entire repository
           path: '.'
+
+      # 设置 workflow run 的名称为 "pages build and deployment"
       - name: Set Workflow Run Name
-        run: echo "##[set-output name=workflow_run_name]pages build and deployment"
-        id: set_name
+        run: echo "pages build and deployment" > workflow_run_name.txt
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-    env:
-      WORKFLOW_RUN_NAME: ${{ steps.set_name.outputs.workflow_run_name }}
-    defaults:
-      run:
-        name: ${{ env.WORKFLOW_RUN_NAME }}
+        with:
+          name: "pages build and deployment"
