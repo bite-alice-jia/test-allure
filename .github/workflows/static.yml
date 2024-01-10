@@ -28,8 +28,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    env:
-      CUSTOM_WORKFLOW_NAME: "pages build and deployment"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -40,10 +38,14 @@ jobs:
         with:
           # Upload entire repository
           path: '.'
-          commit_message: "pages build and deployment"
+      - name: Set Workflow Run Name
+        run: echo "##[set-output name=workflow_run_name]pages build and deployment"
+        id: set_name
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+    env:
+      WORKFLOW_RUN_NAME: ${{ steps.set_name.outputs.workflow_run_name }}
     defaults:
       run:
-        name: ${{ env.CUSTOM_WORKFLOW_NAME }}
+        name: ${{ env.WORKFLOW_RUN_NAME }}
