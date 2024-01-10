@@ -1,43 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <title>Allure Reports</title>
-</head>
-<body>
-<h1>Allure Reports</h1>
-<script>
-    // 获取当前页面 URL 的路径部分
-    var path = window.location.pathname;
-
-    // 发起 Ajax 请求获取同级目录的文件夹名称数组
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            var siblingFolders = JSON.parse(xhr.responseText).directories;
-            displaySiblingFolders(siblingFolders);
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff; /* 白色背景 */
+            color: #000; /* 文字颜色 */
+            margin: 20px;
         }
-    };
-    xhr.open("GET", "directories.json", true);
-    xhr.send();
 
-    // 生成链接并显示同级目录的文件夹名称
-    function displaySiblingFolders(siblingFolders) {
-        var ul = document.createElement("ul");
-        siblingFolders.forEach(function (folder) {
-            var folderURL = path.substring(0, path.lastIndexOf('/')) + "/" + folder + "/";
-            var li = document.createElement("li");
-            var a = document.createElement("a");
-            a.href = folderURL;
-            a.textContent = folder;
-            li.appendChild(a);
-            ul.appendChild(li);
-        });
-        document.body.appendChild(ul);
-    }
-</script>
+        .folder {
+            border: 2px solid #ccc; /* 文件夹边框颜色 */
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
 
+        h1 {
+            color: #000; /* 标题颜色改为黑色 */
+            text-align: center;
+            border-bottom: 2px solid #97cc64; /* 下划线颜色 */
+            padding-bottom: 10px; /* 下划线与文字的间距 */
+        }
+
+        h2 {
+            color: #000; /* 二级标题颜色改为黑色 */
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.5em; /* 二级标题字体大小增加 */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+        li {
+            margin: 10px 10px 0 0; /* 加右边距，上下边距保持原样 */
+            width: 18%;
+        }
+
+        a {
+            color: #fff; /* 链接文字颜色 */
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px;
+            border: 1px solid #97cc64; /* 边框颜色 */
+            border-radius: 5px;
+            background-color: #97cc64; /* 主色系背景色 */
+            text-align: center;
+            display: block;
+        }
+
+        a:hover {
+            background-color: #555; /* 鼠标悬停时的背景色 */
+            color: #fff; /* 鼠标悬停时的文字颜色 */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Allure Reports</h1>
+    <script>
+        var path = window.location.pathname;
+
+        // 发起 Ajax 请求获取同级目录的文件夹名称数组
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var directories = JSON.parse(xhr.responseText).directories;
+                displaySiblingFolders(directories);
+            }
+        };
+
+        xhr.open("GET", "directories.json?_=" + new Date().getTime(), true);
+        xhr.send();
+
+        function displaySiblingFolders(directories) {
+            var body = document.body;
+
+            // 遍历每个目录
+            directories.forEach(function (directory) {
+                for (var dirName in directory) {
+                    if (directory.hasOwnProperty(dirName)) {
+                        var folderDiv = document.createElement("div");
+                        folderDiv.className = "folder"; // 添加文件夹边框样式
+
+                        var h2 = document.createElement("h2");
+                        h2.textContent = dirName; // 获取目录名称
+                        folderDiv.appendChild(h2);
+
+                        var ul = document.createElement("ul");
+                        var subFolders = directory[dirName]; // 获取目录的子目录数组
+
+                        // 遍历每个子目录
+                        subFolders.forEach(function (subFolder) {
+                            var li = document.createElement("li");
+                            var a = document.createElement("a");
+                            var folderURL = path.substring(0, path.lastIndexOf('/')) + "/" + dirName + "/" + subFolder + "/";
+                            a.href = folderURL;
+                            a.textContent = subFolder;
+                            li.appendChild(a);
+                            ul.appendChild(li);
+                        });
+
+                        folderDiv.appendChild(ul);
+                        body.appendChild(folderDiv);
+                    }
+                }
+            });
+        }
+    </script>
 </body>
+
 </html>

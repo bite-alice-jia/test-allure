@@ -1,0 +1,12 @@
+INFO     root:uidriver.py:1560 As current URL matches https://20automarch2023.sit1.stream.bite.dev/gp/dashboard/configuration/security, refreshing page and then waiting for a API response with /get-workspace-info in it
+INFO     root:uidriver.py:922 Refreshing page
+INFO     root:uidriver.py:1566 Found response: https://20automarch2023.sit1.stream.bite.dev/api/gp/tenant/get-workspace-info
+INFO     root:uidriver.py:491 Clicking div:has-text('Multi-factor Authentication') >> button.ant-switch-checked:visible and then waiting for a API response with /tenant/update-workspace-mfa in it
+INFO     root:uidriver.py:552 Click element：div:has-text('Multi-factor Authentication') >> button.ant-switch-checked:visible
+INFO     root:uidriver.py:506 Found response: https://20automarch2023.sit1.stream.bite.dev/api/gp/tenant/update-workspace-mfa?enabled=false&tenantId=1713843897887469569
+INFO     root:uidriver.py:157 Open URL：https://20automarch2023.sit1.stream.bite.dev/auth/sign-in
+INFO     root:uidriver.py:258 Entering text ind_us_20automarch202320231226@snapmail.cc into mat-form-field:has-text('Email') >> input
+INFO     root:uidriver.py:258 Entering text ReallyStrong123! into mat-form-field:has-text('Password') >> input
+INFO     root:uidriver.py:491 Clicking button:has-text('Sign in'):visible and then waiting for a API response with /invest/account/login-by-password in it
+INFO     root:uidriver.py:552 Click element：button:has-text('Sign in'):visible
+INFO     root:uidriver.py:506 Found response: https://20automarch2023.sit1.stream.bite.dev/api/invest/account/login-by-password

@@ -1,0 +1,192 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue Dec 26 07:49:29 UTC 2023","Tue Dec 26 07:49:30 UTC 2023","631","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_released_asset_other_than_status_should_be_ignored[fundamentalDescription]","
+            1. Create RELEASED asset
+            2. Attempt to update asset fields (other than productStatus)
+            3. Assert status code and Asset has NOT changed
+        "
+"passed","Tue Dec 26 07:49:40 UTC 2023","Tue Dec 26 07:49:41 UTC 2023","633","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_released_asset_other_than_status_should_be_ignored[swiftCode]","
+            1. Create RELEASED asset
+            2. Attempt to update asset fields (other than productStatus)
+            3. Assert status code and Asset has NOT changed
+        "
+"passed","Tue Dec 26 07:49:44 UTC 2023","Tue Dec 26 07:49:45 UTC 2023","638","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_released_asset_other_than_status_should_be_ignored[transferInformation]","
+            1. Create RELEASED asset
+            2. Attempt to update asset fields (other than productStatus)
+            3. Assert status code and Asset has NOT changed
+        "
+"passed","Tue Dec 26 07:48:28 UTC 2023","Tue Dec 26 07:48:33 UTC 2023","5044","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_draft_asset_with_all_enums[enum_data3]","
+            1. Create DRAFT asset
+            2. Assert status code
+            3. Perform PUT requests updating fields to all enum values
+        "
+"passed","Tue Dec 26 07:48:51 UTC 2023","Tue Dec 26 07:49:03 UTC 2023","12007","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_draft_asset_with_all_enums[enum_data6]","
+            1. Create DRAFT asset
+            2. Assert status code
+            3. Perform PUT requests updating fields to all enum values
+        "
+"passed","Tue Dec 26 07:49:36 UTC 2023","Tue Dec 26 07:49:36 UTC 2023","633","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_released_asset_other_than_status_should_be_ignored[fundamentalComplianceCheckEmail]","
+            1. Create RELEASED asset
+            2. Attempt to update asset fields (other than productStatus)
+            3. Assert status code and Asset has NOT changed
+        "
+"passed","Tue Dec 26 07:48:33 UTC 2023","Tue Dec 26 07:48:47 UTC 2023","13850","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_draft_asset_with_all_enums[enum_data4]","
+            1. Create DRAFT asset
+            2. Assert status code
+            3. Perform PUT requests updating fields to all enum values
+        "
+"skipped","Tue Dec 26 07:49:45 UTC 2023","Tue Dec 26 07:49:45 UTC 2023","0","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_unable_to_create_draft_asset_with_incorrect_currency_code","
+            1. Find a currency code which is not set up in current tenant
+            2. Attempt to create Draft Asset with incorrect currency code and validate it errors
+            3. Create draft asset with valid currency code
+            4. Attempt to update draft asset with incorrect currency code and validate it errors
+        "
+"passed","Tue Dec 26 07:49:33 UTC 2023","Tue Dec 26 07:49:34 UTC 2023","638","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_released_asset_other_than_status_should_be_ignored[fundamentalLiquidityDescription]","
+            1. Create RELEASED asset
+            2. Attempt to update asset fields (other than productStatus)
+            3. Assert status code and Asset has NOT changed
+        "
+"passed","Tue Dec 26 07:49:30 UTC 2023","Tue Dec 26 07:49:31 UTC 2023","978","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_released_asset_other_than_status_should_be_ignored[fundamentalType]","
+            1. Create RELEASED asset
+            2. Attempt to update asset fields (other than productStatus)
+            3. Assert status code and Asset has NOT changed
+        "
+"passed","Tue Dec 26 07:49:41 UTC 2023","Tue Dec 26 07:49:42 UTC 2023","630","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_released_asset_other_than_status_should_be_ignored[accountName]","
+            1. Create RELEASED asset
+            2. Attempt to update asset fields (other than productStatus)
+            3. Assert status code and Asset has NOT changed
+        "
+"passed","Tue Dec 26 07:49:28 UTC 2023","Tue Dec 26 07:49:28 UTC 2023","658","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_released_asset_other_than_status_should_be_ignored[fundamentalName]","
+            1. Create RELEASED asset
+            2. Attempt to update asset fields (other than productStatus)
+            3. Assert status code and Asset has NOT changed
+        "
+"passed","Tue Dec 26 07:49:43 UTC 2023","Tue Dec 26 07:49:43 UTC 2023","644","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_released_asset_other_than_status_should_be_ignored[bankAba]","
+            1. Create RELEASED asset
+            2. Attempt to update asset fields (other than productStatus)
+            3. Assert status code and Asset has NOT changed
+        "
+"passed","Tue Dec 26 07:49:39 UTC 2023","Tue Dec 26 07:49:40 UTC 2023","641","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_released_asset_other_than_status_should_be_ignored[brandingDetailBackgroundImage]","
+            1. Create RELEASED asset
+            2. Attempt to update asset fields (other than productStatus)
+            3. Assert status code and Asset has NOT changed
+        "
+"passed","Tue Dec 26 07:49:32 UTC 2023","Tue Dec 26 07:49:32 UTC 2023","638","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_released_asset_other_than_status_should_be_ignored[fundamentalStyle]","
+            1. Create RELEASED asset
+            2. Attempt to update asset fields (other than productStatus)
+            3. Assert status code and Asset has NOT changed
+        "
+"passed","Tue Dec 26 07:49:34 UTC 2023","Tue Dec 26 07:49:34 UTC 2023","700","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_released_asset_other_than_status_should_be_ignored[fundamentalFcaApproved]","
+            1. Create RELEASED asset
+            2. Attempt to update asset fields (other than productStatus)
+            3. Assert status code and Asset has NOT changed
+        "
+"passed","Tue Dec 26 07:48:23 UTC 2023","Tue Dec 26 07:48:28 UTC 2023","5536","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_draft_asset_with_all_enums[enum_data2]","
+            1. Create DRAFT asset
+            2. Assert status code
+            3. Perform PUT requests updating fields to all enum values
+        "
+"passed","Tue Dec 26 07:49:35 UTC 2023","Tue Dec 26 07:49:36 UTC 2023","635","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_released_asset_other_than_status_should_be_ignored[fundamentalTargetFundManager]","
+            1. Create RELEASED asset
+            2. Attempt to update asset fields (other than productStatus)
+            3. Assert status code and Asset has NOT changed
+        "
+"passed","Tue Dec 26 07:49:03 UTC 2023","Tue Dec 26 07:49:10 UTC 2023","6860","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_draft_asset_with_all_enums[enum_data7]","
+            1. Create DRAFT asset
+            2. Assert status code
+            3. Perform PUT requests updating fields to all enum values
+        "
+"passed","Tue Dec 26 07:49:42 UTC 2023","Tue Dec 26 07:49:42 UTC 2023","627","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_released_asset_other_than_status_should_be_ignored[account]","
+            1. Create RELEASED asset
+            2. Attempt to update asset fields (other than productStatus)
+            3. Assert status code and Asset has NOT changed
+        "
+"passed","Tue Dec 26 07:49:38 UTC 2023","Tue Dec 26 07:49:38 UTC 2023","646","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_released_asset_other_than_status_should_be_ignored[brandingLogo]","
+            1. Create RELEASED asset
+            2. Attempt to update asset fields (other than productStatus)
+            3. Assert status code and Asset has NOT changed
+        "
+"passed","Tue Dec 26 07:49:32 UTC 2023","Tue Dec 26 07:49:33 UTC 2023","644","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_released_asset_other_than_status_should_be_ignored[fundamentalTargetReturn]","
+            1. Create RELEASED asset
+            2. Attempt to update asset fields (other than productStatus)
+            3. Assert status code and Asset has NOT changed
+        "
+"passed","Tue Dec 26 07:49:31 UTC 2023","Tue Dec 26 07:49:31 UTC 2023","630","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_released_asset_other_than_status_should_be_ignored[fundamentalStatus]","
+            1. Create RELEASED asset
+            2. Attempt to update asset fields (other than productStatus)
+            3. Assert status code and Asset has NOT changed
+        "
+"passed","Tue Dec 26 07:48:14 UTC 2023","Tue Dec 26 07:48:18 UTC 2023","4092","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_draft_asset_with_all_enums[enum_data0]","
+            1. Create DRAFT asset
+            2. Assert status code
+            3. Perform PUT requests updating fields to all enum values
+        "
+"passed","Tue Dec 26 07:49:34 UTC 2023","Tue Dec 26 07:49:35 UTC 2023","627","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_released_asset_other_than_status_should_be_ignored[fundamentalTargetFund]","
+            1. Create RELEASED asset
+            2. Attempt to update asset fields (other than productStatus)
+            3. Assert status code and Asset has NOT changed
+        "
+"passed","Tue Dec 26 07:47:52 UTC 2023","Tue Dec 26 07:48:14 UTC 2023","21769","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_create_draft_and_release_asset","
+            1. Create draft asset (create_new_asset_for_function)
+            2. Populate shareclass
+            3. Populate Marketing
+            4. Update Asset to Released
+            5. Assert released asset matches draft data
+            6. Assert Changing Copy created
+            7. Assert Changing copy matches draft data
+            8. Assert UI details against draft data
+        "
+"passed","Tue Dec 26 07:49:42 UTC 2023","Tue Dec 26 07:49:43 UTC 2023","633","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_released_asset_other_than_status_should_be_ignored[bankAddress]","
+            1. Create RELEASED asset
+            2. Attempt to update asset fields (other than productStatus)
+            3. Assert status code and Asset has NOT changed
+        "
+"passed","Tue Dec 26 07:49:43 UTC 2023","Tue Dec 26 07:49:44 UTC 2023","654","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_released_asset_other_than_status_should_be_ignored[forFurtherCreditTo]","
+            1. Create RELEASED asset
+            2. Attempt to update asset fields (other than productStatus)
+            3. Assert status code and Asset has NOT changed
+        "
+"passed","Tue Dec 26 07:49:31 UTC 2023","Tue Dec 26 07:49:32 UTC 2023","632","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_released_asset_other_than_status_should_be_ignored[fundamentalLiquidity]","
+            1. Create RELEASED asset
+            2. Attempt to update asset fields (other than productStatus)
+            3. Assert status code and Asset has NOT changed
+        "
+"passed","Tue Dec 26 07:48:47 UTC 2023","Tue Dec 26 07:48:51 UTC 2023","3920","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_draft_asset_with_all_enums[enum_data5]","
+            1. Create DRAFT asset
+            2. Assert status code
+            3. Perform PUT requests updating fields to all enum values
+        "
+"passed","Tue Dec 26 07:49:10 UTC 2023","Tue Dec 26 07:49:15 UTC 2023","5235","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_draft_asset_with_all_enums[enum_data8]","
+            1. Create DRAFT asset
+            2. Assert status code
+            3. Perform PUT requests updating fields to all enum values
+        "
+"passed","Tue Dec 26 07:49:28 UTC 2023","Tue Dec 26 07:49:29 UTC 2023","644","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_released_asset_other_than_status_should_be_ignored[baseCurrency]","
+            1. Create RELEASED asset
+            2. Attempt to update asset fields (other than productStatus)
+            3. Assert status code and Asset has NOT changed
+        "
+"passed","Tue Dec 26 07:49:37 UTC 2023","Tue Dec 26 07:49:38 UTC 2023","648","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_released_asset_other_than_status_should_be_ignored[fundamentalOnline]","
+            1. Create RELEASED asset
+            2. Attempt to update asset fields (other than productStatus)
+            3. Assert status code and Asset has NOT changed
+        "
+"passed","Tue Dec 26 07:49:40 UTC 2023","Tue Dec 26 07:49:40 UTC 2023","664","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_released_asset_other_than_status_should_be_ignored[bankName]","
+            1. Create RELEASED asset
+            2. Attempt to update asset fields (other than productStatus)
+            3. Assert status code and Asset has NOT changed
+        "
+"passed","Tue Dec 26 07:49:36 UTC 2023","Tue Dec 26 07:49:37 UTC 2023","674","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_released_asset_other_than_status_should_be_ignored[fundamentalSubscriptionEmail]","
+            1. Create RELEASED asset
+            2. Attempt to update asset fields (other than productStatus)
+            3. Assert status code and Asset has NOT changed
+        "
+"passed","Tue Dec 26 07:49:38 UTC 2023","Tue Dec 26 07:49:39 UTC 2023","654","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_released_asset_other_than_status_should_be_ignored[brandingBackgroundImage]","
+            1. Create RELEASED asset
+            2. Attempt to update asset fields (other than productStatus)
+            3. Assert status code and Asset has NOT changed
+        "
+"passed","Tue Dec 26 07:48:18 UTC 2023","Tue Dec 26 07:48:23 UTC 2023","4125","Tests.TestCases.Stream_Integration.Assets.BaseDraft","test_asset_base_draft","TestAssetBaseDraft","","","test_update_draft_asset_with_all_enums[enum_data1]","
+            1. Create DRAFT asset
+            2. Assert status code
+            3. Perform PUT requests updating fields to all enum values
+        "

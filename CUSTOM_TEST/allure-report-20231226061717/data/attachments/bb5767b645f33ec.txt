@@ -1,0 +1,289 @@
+INFO     root:uidriver.py:1569 Go to https://3automarch2023.sit1.stream.bite.dev/gp/dashboard/workspace/products and then waiting for a API response with /product/page in it
+INFO     root:uidriver.py:1577 Found response: https://3automarch2023.sit1.stream.bite.dev/api/product/page
+INFO     root:uidriver.py:491 Clicking span:text-is('Create new Asset') and then waiting for a API response with /product/templates in it
+INFO     root:uidriver.py:552 Click element：span:text-is('Create new Asset')
+INFO     root:uidriver.py:506 Found response: https://3automarch2023.sit1.stream.bite.dev/api/product/templates
+INFO     root:uidriver.py:180 Finding element [formcontrolname='referencedTemplateId'] >> input:visible
+INFO     root:uidriver.py:456 Scroll element to middle position - [formcontrolname='referencedTemplateId'] >> input:visible
+INFO     root:uidriver.py:552 Click element：[formcontrolname='referencedTemplateId'] >> input:visible
+INFO     root:uidriver.py:1599 Clicking option -nz-option-item:visible >> text='Private equity fund template' >> nth=0
+INFO     root:uidriver.py:1454 Found response: https://3automarch2023.sit1.stream.bite.dev/api/product/get-released-and-changing
+INFO     root:uidriver.py:881 Sleeping for 1 seconds
+INFO     root:uidriver.py:180 Finding element input[formcontrolname='fundamentalName']:visible
+INFO     root:uidriver.py:687 Setting elements attribute: value=
+INFO     root:uidriver.py:258 Entering text Close Ended-20231226061559809 into input[formcontrolname='fundamentalName']:visible
+INFO     root:uidriver.py:491 Clicking #fundamentalName >> label:visible and then waiting for a API response with /product/update in it
+INFO     root:uidriver.py:552 Click element：#fundamentalName >> label:visible
+INFO     root:uidriver.py:506 Found response: https://3automarch2023.sit1.stream.bite.dev/api/product/update
+INFO     root:uidriver.py:180 Finding element [formcontrolname='fundamentalType'] >> input:visible
+INFO     root:uidriver.py:456 Scroll element to middle position - [formcontrolname='fundamentalType'] >> input:visible
+INFO     root:uidriver.py:552 Click element：[formcontrolname='fundamentalType'] >> input:visible
+INFO     root:uidriver.py:1599 Clicking option -nz-option-item:visible >> text='Close Ended' >> nth=0
+INFO     root:uidriver.py:1454 Found response: https://3automarch2023.sit1.stream.bite.dev/api/product/update
+INFO     root:uidriver.py:180 Finding element [formcontrolname='fundamentalLiquidity'] >> input:visible
+INFO     root:uidriver.py:456 Scroll element to middle position - [formcontrolname='fundamentalLiquidity'] >> input:visible
+INFO     root:uidriver.py:552 Click element：[formcontrolname='fundamentalLiquidity'] >> input:visible
+INFO     root:uidriver.py:1599 Clicking option -nz-option-item:visible >> text='3-5Years' >> nth=0
+INFO     root:uidriver.py:1454 Found response: https://3automarch2023.sit1.stream.bite.dev/api/product/update
+INFO     root:uidriver.py:180 Finding element [formcontrolname='fundamentalStyle'] >> input:visible
+INFO     root:uidriver.py:456 Scroll element to middle position - [formcontrolname='fundamentalStyle'] >> input:visible
+INFO     root:uidriver.py:552 Click element：[formcontrolname='fundamentalStyle'] >> input:visible
+INFO     root:uidriver.py:1599 Clicking option -nz-option-item:visible >> text='Impact' >> nth=0
+INFO     root:uidriver.py:1454 Found response: https://3automarch2023.sit1.stream.bite.dev/api/product/update
+INFO     root:uidriver.py:180 Finding element [formcontrolname='fundamentalTargetReturn'] >> input:visible
+INFO     root:uidriver.py:456 Scroll element to middle position - [formcontrolname='fundamentalTargetReturn'] >> input:visible
+INFO     root:uidriver.py:552 Click element：[formcontrolname='fundamentalTargetReturn'] >> input:visible
+INFO     root:uidriver.py:1599 Clicking option -nz-option-item:visible >> text='15%' >> nth=0
+INFO     root:uidriver.py:869 Moving mouse to element: cdk-virtual-scroll-viewport
+INFO     root:uidriver.py:881 Sleeping for 0.5 seconds
+INFO     root:uidriver.py:1454 Found response: https://3automarch2023.sit1.stream.bite.dev/api/product/update
+INFO     root:uidriver.py:180 Finding element [formcontrolname='strategies'] >> input:visible
+INFO     root:uidriver.py:456 Scroll element to middle position - [formcontrolname='strategies'] >> input:visible
+INFO     root:uidriver.py:552 Click element：[formcontrolname='strategies'] >> input:visible
+INFO     root:uidriver.py:1599 Clicking option -nz-option-item:visible >> text='SAFE' >> nth=0
+INFO     root:uidriver.py:869 Moving mouse to element: cdk-virtual-scroll-viewport
+INFO     root:uidriver.py:881 Sleeping for 0.5 seconds
+INFO     root:uidriver.py:1454 Found response: https://3automarch2023.sit1.stream.bite.dev/api/product/update
+INFO     root:uidriver.py:533 Pressing key Escape
+INFO     root:uidriver.py:180 Finding element [formcontrolname='geographicFocus'] >> input:visible
+INFO     root:uidriver.py:456 Scroll element to middle position - [formcontrolname='geographicFocus'] >> input:visible
+INFO     root:uidriver.py:552 Click element：[formcontrolname='geographicFocus'] >> input:visible
+INFO     root:uidriver.py:1599 Clicking option -nz-option-item:visible >> text='LATAM' >> nth=0
+INFO     root:uidriver.py:1454 Found response: https://3automarch2023.sit1.stream.bite.dev/api/product/update
+INFO     root:uidriver.py:533 Pressing key Escape
+INFO     root:uidriver.py:180 Finding element [formcontrolname='fundamentalStatus'] >> input:visible
+INFO     root:uidriver.py:456 Scroll element to middle position - [formcontrolname='fundamentalStatus'] >> input:visible
+INFO     root:uidriver.py:552 Click element：[formcontrolname='fundamentalStatus'] >> input:visible
+INFO     root:uidriver.py:1599 Clicking option -nz-option-item:visible >> text='Closing Soon' >> nth=0
+INFO     root:uidriver.py:1454 Found response: https://3automarch2023.sit1.stream.bite.dev/api/product/update
+INFO     root:uidriver.py:180 Finding element [formcontrolname='baseCurrency'] >> input:visible
+INFO     root:uidriver.py:456 Scroll element to middle position - [formcontrolname='baseCurrency'] >> input:visible
+INFO     root:uidriver.py:552 Click element：[formcontrolname='baseCurrency'] >> input:visible
+INFO     root:uidriver.py:1599 Clicking option -nz-option-item:visible >> text='USD' >> nth=0
+INFO     root:uidriver.py:1454 Found response: https://3automarch2023.sit1.stream.bite.dev/api/product/update
+INFO     root:uidriver.py:180 Finding element [formcontrolname='fundamentalOnline'] >> input:visible
+INFO     root:uidriver.py:456 Scroll element to middle position - [formcontrolname='fundamentalOnline'] >> input:visible
+INFO     root:uidriver.py:552 Click element：[formcontrolname='fundamentalOnline'] >> input:visible
+INFO     root:uidriver.py:1599 Clicking option -nz-option-item:visible >> text='Allow investors to finish investment process.' >> nth=0
+INFO     root:uidriver.py:1454 Found response: https://3automarch2023.sit1.stream.bite.dev/api/product/update
+INFO     root:uidriver.py:258 Entering text David Williams into input[formcontrolname='bankName']:visible
+INFO     root:uidriver.py:491 Clicking #bankName >> label:visible and then waiting for a API response with /product/update in it
+INFO     root:uidriver.py:552 Click element：#bankName >> label:visible
+INFO     root:uidriver.py:506 Found response: https://3automarch2023.sit1.stream.bite.dev/api/product/update
+INFO     root:uidriver.py:258 Entering text 724 into input[formcontrolname='swiftCode']:visible
+INFO     root:uidriver.py:491 Clicking #swiftCode >> label:visible and then waiting for a API response with /product/update in it
+INFO     root:uidriver.py:552 Click element：#swiftCode >> label:visible
+INFO     root:uidriver.py:506 Found response: https://3automarch2023.sit1.stream.bite.dev/api/product/update
+INFO     root:uidriver.py:258 Entering text Clifford Mccann into input[formcontrolname='accountName']:visible
+INFO     root:uidriver.py:491 Clicking #accountName >> label:visible and then waiting for a API response with /product/update in it
+INFO     root:uidriver.py:552 Click element：#accountName >> label:visible
+INFO     root:uidriver.py:506 Found response: https://3automarch2023.sit1.stream.bite.dev/api/product/update
+INFO     root:uidriver.py:258 Entering text 151 into input[formcontrolname='account']:visible
+INFO     root:uidriver.py:491 Clicking #account >> label:visible and then waiting for a API response with /product/update in it
+INFO     root:uidriver.py:552 Click element：#account >> label:visible
+INFO     root:uidriver.py:506 Found response: https://3automarch2023.sit1.stream.bite.dev/api/product/update
+INFO     root:uidriver.py:258 Entering text 14254 Dean Mountains Apt. 177 into input[formcontrolname='bankAddress']:visible
+INFO     root:uidriver.py:491 Clicking #bankAddress >> label:visible and then waiting for a API response with /product/update in it
+INFO     root:uidriver.py:552 Click element：#bankAddress >> label:visible
+INFO     root:uidriver.py:506 Found response: https://3automarch2023.sit1.stream.bite.dev/api/product/update
+INFO     root:uidriver.py:180 Finding element [formcontrolname='riskTaskHandlers'] >> input:visible
+INFO     root:uidriver.py:456 Scroll element to middle position - [formcontrolname='riskTaskHandlers'] >> input:visible
+INFO     root:uidriver.py:258 Entering text UI Test(uitest@snapmail.cc) into [formcontrolname='riskTaskHandlers'] >> input:visible
+INFO     root:uidriver.py:552 Click element：[formcontrolname='riskTaskHandlers'] >> input:visible
+INFO     root:uidriver.py:1599 Clicking option -nz-option-item:visible >> text='UI Test(uitest@snapmail.cc)' >> nth=0
+INFO     root:uidriver.py:869 Moving mouse to element: cdk-virtual-scroll-viewport
+INFO     root:uidriver.py:881 Sleeping for 0.5 seconds
+INFO     root:uidriver.py:1487 Found response: https://3automarch2023.sit1.stream.bite.dev/api/tenants/1633775529686429697/products/1739530504893669378/product-task-handlers
+INFO     root:uidriver.py:533 Pressing key Escape
+INFO     root:uidriver.py:180 Finding element [formcontrolname='reviewTaskHandlers'] >> input:visible
+INFO     root:uidriver.py:456 Scroll element to middle position - [formcontrolname='reviewTaskHandlers'] >> input:visible
+INFO     root:uidriver.py:322 Clearing input and then sending keys：UI Test(uitest@snapmail.cc) into [formcontrolname='reviewTaskHandlers'] >> input:visible
+INFO     root:uidriver.py:180 Finding element [formcontrolname='reviewTaskHandlers'] >> input:visible
+INFO     root:uidriver.py:286 Pressing：UI Test(uitest@snapmail.cc) into [formcontrolname='reviewTaskHandlers'] >> input:visible
+INFO     root:uidriver.py:552 Click element：[formcontrolname='reviewTaskHandlers'] >> input:visible
+INFO     root:uidriver.py:881 Sleeping for 0.3 seconds
+INFO     root:uidriver.py:1599 Clicking option -nz-option-item:visible >> text='UI Test(uitest@snapmail.cc)' >> nth=0
+INFO     root:uidriver.py:1520 Found response: https://3automarch2023.sit1.stream.bite.dev/api/tenants/1633775529686429697/products/1739530504893669378/product-task-handlers
+INFO     root:uidriver.py:533 Pressing key Escape
+INFO     root:uidriver.py:794 Getting all matching elements text for table >> nth=0 >> thead >> th:visible
+INFO     root:uidriver.py:752 Querying elements matched by table >> nth=0 >> thead >> th:visible Timeout: 1
+INFO     root:uidriver.py:813 ['Document name', 'Applies to', 'Accepted document type', 'Mandatory', 'Regulatory Scope', 'Operation']
+INFO     root:uidriver.py:738 Finding elements matched by table >> nth=0 >> tbody >> tr:visible
+INFO     root:uidriver.py:794 Getting all matching elements text for table >> nth=0 >> tbody >> tr:visible >> nth=0 >> td
+INFO     root:uidriver.py:752 Querying elements matched by table >> nth=0 >> tbody >> tr:visible >> nth=0 >> td Timeout: 1
+INFO     root:uidriver.py:813 ['Proof of address', 'Individual, Entity', 'Bank statement,Credit card statement,Utility bill,Reference letter,Government letter', 'Yes', 'All investors', '...']
+INFO     root:uidriver.py:794 Getting all matching elements text for table >> nth=0 >> tbody >> tr:visible >> nth=1 >> td
+INFO     root:uidriver.py:752 Querying elements matched by table >> nth=0 >> tbody >> tr:visible >> nth=1 >> td Timeout: 1
+INFO     root:uidriver.py:813 ['Proof of identity', 'Individual, Entity', 'Passport', 'Yes', 'All investors', '...']
+INFO     root:uidriver.py:829 Getting all matching elements text for [formcontrolname='fundamentalFcaApproved'] >> nz-select-item, And change text format to strip
+INFO     root:uidriver.py:858 []
+INFO     root:uidriver.py:180 Finding element [formcontrolname='fundamentalFcaApproved'] >> input:visible
+INFO     root:uidriver.py:456 Scroll element to middle position - [formcontrolname='fundamentalFcaApproved'] >> input:visible
+INFO     root:uidriver.py:552 Click element：[formcontrolname='fundamentalFcaApproved'] >> input:visible
+INFO     root:uidriver.py:1599 Clicking option -nz-option-item:visible >> text='yes' >> nth=0
+INFO     root:uidriver.py:1454 Found response: https://3automarch2023.sit1.stream.bite.dev/api/product/update
+INFO     root:uidriver.py:491 Clicking button.next:visible and then waiting for a API response with / in it
+INFO     root:uidriver.py:552 Click element：button.next:visible
+INFO     root:uidriver.py:506 Found response: https://3automarch2023.sit1.stream.bite.dev/api/share-class/get
+INFO     root:uidriver.py:881 Sleeping for 0.5 seconds
+INFO     root:uidriver.py:552 Click element：tr:has(td:has-text('Untitled share class')) >> a
+INFO     root:uidriver.py:491 Clicking .dropdownMenu >> li:text-is('Edit') and then waiting for a API response with / in it
+INFO     root:uidriver.py:552 Click element：.dropdownMenu >> li:text-is('Edit')
+INFO     root:uidriver.py:506 Found response: https://3automarch2023.sit1.stream.bite.dev/api/gp/security/permissions
+INFO     root:uidriver.py:881 Sleeping for 0.5 seconds
+INFO     root:uidriver.py:258 Entering text Untitled share class into [formcontrolname='name']
+INFO     root:uidriver.py:312 Clearing input: [formcontrolname='name']
+INFO     root:uidriver.py:829 Getting all matching elements text for [formcontrolname='applicableGroup'] >> nz-select-item, And change text format to strip
+INFO     root:uidriver.py:858 ['Independent Investors']
+INFO     root:uidriver.py:552 Click element：[formcontrolname='applicableGroup']  >> nz-select-item >> svg >> nth=0
+INFO     root:uidriver.py:180 Finding element [formcontrolname='applicableGroup']
+INFO     root:uidriver.py:456 Scroll element to middle position - [formcontrolname='applicableGroup']
+INFO     root:uidriver.py:552 Click element：[formcontrolname='applicableGroup']
+INFO     root:uidriver.py:1599 Clicking option -nz-option-item:visible >> text='Independent Investors' >> nth=0
+INFO     root:uidriver.py:533 Pressing key Escape
+INFO     root:uidriver.py:258 Entering text 59438 into [formcontrolname='minimumInvestment'] >> input
+INFO     root:uidriver.py:258 Entering text 59438 into //nz-input-number[@formcontrolname='minimumInvestmentAtSecTime']//input
+INFO     root:uidriver.py:258 Entering text 1 into //nz-input-number[@formcontrolname='subsequentInvestment']//input
+INFO     root:uidriver.py:491 Clicking button:has(span:text-is('Submit')):visible, button:has(span:text-is('Confirm')):visible and then waiting for a API response with /share-class/get in it
+INFO     root:uidriver.py:552 Click element：button:has(span:text-is('Submit')):visible, button:has(span:text-is('Confirm')):visible
+INFO     root:uidriver.py:506 Found response: https://3automarch2023.sit1.stream.bite.dev/api/share-class/get
+INFO     root:uidriver.py:491 Clicking button.next:visible and then waiting for a API response with / in it
+INFO     root:uidriver.py:552 Click element：button.next:visible
+INFO     root:uidriver.py:506 Found response: https://3automarch2023.sit1.stream.bite.dev/gp/
+INFO     root:uidriver.py:881 Sleeping for 0.5 seconds
+INFO     root:uidriver.py:1548 Upload file:/home/qaadmin/actions-runner/_work/stream-test-ui/stream-test-ui/Tests/StaticTestData/Files/GP/Asset/logo-1.png to div.imageLogo:has-text('Upload logo') and then waiting for a API response with branding/add-logo in it
+INFO     root:uidriver.py:201 Uploading file:/home/qaadmin/actions-runner/_work/stream-test-ui/stream-test-ui/Tests/StaticTestData/Files/GP/Asset/logo-1.png and waiting for any response
+INFO     root:uidriver.py:552 Click element：div.imageLogo:has-text('Upload logo')
+INFO     root:uidriver.py:881 Sleeping for 1 seconds
+INFO     root:uidriver.py:210 Found response: https://3automarch2023.sit1.stream.bite.dev/api/product/get-released-and-changing
+INFO     root:uidriver.py:1553 Found response: https://3automarch2023.sit1.stream.bite.dev/api/branding/add-logo?productBrandingEnum=logo&productId=1739530504893669378
+INFO     root:uidriver.py:552 Click element：button:has-text('Try our templates')
+INFO     root:uidriver.py:552 Click element：div.picture >> nth = 0
+INFO     root:uidriver.py:491 Clicking button:has-text('Submit'):visible and then waiting for a API response with branding/add-background-picture in it
+INFO     root:uidriver.py:552 Click element：button:has-text('Submit'):visible
+INFO     root:uidriver.py:506 Found response: https://3automarch2023.sit1.stream.bite.dev/api/branding/add-background-picture
+INFO     root:uidriver.py:491 Clicking button.next:visible and then waiting for a API response with / in it
+INFO     root:uidriver.py:552 Click element：button.next:visible
+INFO     root:uidriver.py:506 Found response: https://3automarch2023.sit1.stream.bite.dev/api/product/get-released-and-changing
+INFO     root:uidriver.py:881 Sleeping for 0.5 seconds
+INFO     root:uidriver.py:491 Clicking button.next:visible and then waiting for a API response with / in it
+INFO     root:uidriver.py:552 Click element：button.next:visible
+INFO     root:uidriver.py:506 Found response: https://3automarch2023.sit1.stream.bite.dev/api/product/compliance/witness-config?productId=1739530504893669378
+INFO     root:uidriver.py:881 Sleeping for 0.5 seconds
+INFO     root:uidriver.py:881 Sleeping for 1 seconds
+INFO     root:uidriver.py:881 Sleeping for 1 seconds
+INFO     root:uidriver.py:491 Clicking button:has-text('Release'):visible and then waiting for a API response with /product/release in it
+INFO     root:uidriver.py:552 Click element：button:has-text('Release'):visible
+INFO     root:uidriver.py:506 Found response: https://3automarch2023.sit1.stream.bite.dev/api/product/release
+INFO     root:uidriver.py:258 Entering text Close Ended-20231226061559809 into //nz-input-group//input
+INFO     root:uidriver.py:491 Clicking //span[contains(@class,'ant-input-group-addon')]/button and then waiting for a API response with /product/page in it
+INFO     root:uidriver.py:552 Click element：//span[contains(@class,'ant-input-group-addon')]/button
+INFO     root:uidriver.py:506 Found response: https://3automarch2023.sit1.stream.bite.dev/api/product/page
+INFO     root:uidriver.py:881 Sleeping for 0.5 seconds
+INFO     root:uidriver.py:829 Getting all matching elements text for stream-product-datatable:visible >> table >> nth = 0 >> thead >> th:visible, And change text format to strip
+INFO     root:uidriver.py:858 ['Fund name', 'Fund type', 'Liquidity', 'Strategy', 'Style', 'Target Return', 'Geographic Focus', 'Status', 'Release status', 'Source', 'Operation']
+INFO     root:uidriver.py:752 Querying elements matched by stream-product-datatable:visible >> table >> nth = 0 >> tbody >> tr:visible Timeout: 20.0
+INFO     root:uidriver.py:794 Getting all matching elements text for stream-product-datatable:visible >> table >> nth = 0 >> tbody >> tr:visible >> nth=0 >> td
+INFO     root:uidriver.py:752 Querying elements matched by stream-product-datatable:visible >> table >> nth = 0 >> tbody >> tr:visible >> nth=0 >> td Timeout: 1
+INFO     root:uidriver.py:813 ['Close Ended-20231226061559809', 'Close Ended', '3-5Years', 'SAFE', 'Impact', '15%', 'LATAM', 'Closing soon', 'Released  Released 0 minutes ago.', '3 Original', '']
+INFO     root:uidriver.py:2032 Table - [{'fund_name': 'Close Ended-20231226061559809', 'fund_type': 'Close Ended', 'liquidity': '3-5Years', 'strategy': 'SAFE', 'style': 'Impact', 'target_return': '15%', 'geographic_focus': 'LATAM', 'status': 'Closing soon', 'release_status': 'Released  Released 0 minutes ago.', 'source': '3 Original', 'operation': ''}]
+INFO     root:conftest.py:125 Worker ID: gw0, RELEASING area: 3automarch2023 and alt_area: 13automarch2023
+INFO     azure.core.pipeline.policies.http_logging_policy:_universal.py:514 Request URL: 'https://biteautoteststorage.table.core.windows.net/TestDomainAllocation()?$filter=REDACTED'
+Request method: 'GET'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'DataServiceVersion': 'REDACTED'
+    'Accept': 'application/json;odata=minimalmetadata'
+    'x-ms-client-request-id': '5fb7d41a-a3b6-11ee-a88e-f1ad3fb285aa'
+    'x-ms-date': 'REDACTED'
+    'Date': 'Tue, 26 Dec 2023 06:16:58 GMT'
+    'User-Agent': 'azsdk-python-data-tables/12.4.4 Python/3.8.10 (Linux-6.2.0-1018-azure-x86_64-with-glibc2.34)'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+INFO     azure.core.pipeline.policies.http_logging_policy:_universal.py:550 Response status: 200
+Response headers:
+    'Cache-Control': 'no-cache'
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json;odata=minimalmetadata;streaming=true;charset=utf-8'
+    'Server': 'Windows-Azure-Table/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '4bd9532a-9002-0011-30c3-3725b3000000'
+    'x-ms-client-request-id': '5fb7d41a-a3b6-11ee-a88e-f1ad3fb285aa'
+    'x-ms-version': 'REDACTED'
+    'X-Content-Type-Options': 'REDACTED'
+    'Date': 'Tue, 26 Dec 2023 06:16:57 GMT'
+INFO     azure.core.pipeline.policies.http_logging_policy:_universal.py:511 Request URL: 'https://biteautoteststorage.table.core.windows.net/TestDomainAllocation(PartitionKey='1',RowKey='3')'
+Request method: 'PUT'
+Request headers:
+    'Content-Type': 'application/json'
+    'Content-Length': '365'
+    'x-ms-version': 'REDACTED'
+    'DataServiceVersion': 'REDACTED'
+    'If-Match': '*'
+    'Accept': 'application/json'
+    'x-ms-client-request-id': '5fb7d41b-a3b6-11ee-a88e-f1ad3fb285aa'
+    'x-ms-date': 'REDACTED'
+    'Date': 'Tue, 26 Dec 2023 06:16:58 GMT'
+    'User-Agent': 'azsdk-python-data-tables/12.4.4 Python/3.8.10 (Linux-6.2.0-1018-azure-x86_64-with-glibc2.34)'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+INFO     azure.core.pipeline.policies.http_logging_policy:_universal.py:550 Response status: 204
+Response headers:
+    'Cache-Control': 'no-cache'
+    'Content-Length': '0'
+    'ETag': 'W/"datetime'2023-12-26T06%3A16%3A58.5819155Z'"'
+    'Server': 'Windows-Azure-Table/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '4bd9533e-9002-0011-3cc3-3725b3000000'
+    'x-ms-client-request-id': '5fb7d41b-a3b6-11ee-a88e-f1ad3fb285aa'
+    'x-ms-version': 'REDACTED'
+    'X-Content-Type-Options': 'REDACTED'
+    'Date': 'Tue, 26 Dec 2023 06:16:58 GMT'
+INFO     azure.core.pipeline.policies.http_logging_policy:_universal.py:514 Request URL: 'https://biteautoteststorage.table.core.windows.net/TestDomainAllocation()?$filter=REDACTED'
+Request method: 'GET'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'DataServiceVersion': 'REDACTED'
+    'Accept': 'application/json;odata=minimalmetadata'
+    'x-ms-client-request-id': '5fb7d41c-a3b6-11ee-a88e-f1ad3fb285aa'
+    'x-ms-date': 'REDACTED'
+    'Date': 'Tue, 26 Dec 2023 06:16:58 GMT'
+    'User-Agent': 'azsdk-python-data-tables/12.4.4 Python/3.8.10 (Linux-6.2.0-1018-azure-x86_64-with-glibc2.34)'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+INFO     azure.core.pipeline.policies.http_logging_policy:_universal.py:550 Response status: 200
+Response headers:
+    'Cache-Control': 'no-cache'
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json;odata=minimalmetadata;streaming=true;charset=utf-8'
+    'Server': 'Windows-Azure-Table/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'c0d89b9d-1002-006d-6cc3-370b4c000000'
+    'x-ms-client-request-id': '5fb7d41c-a3b6-11ee-a88e-f1ad3fb285aa'
+    'x-ms-version': 'REDACTED'
+    'X-Content-Type-Options': 'REDACTED'
+    'Date': 'Tue, 26 Dec 2023 06:16:58 GMT'
+INFO     azure.core.pipeline.policies.http_logging_policy:_universal.py:511 Request URL: 'https://biteautoteststorage.table.core.windows.net/TestDomainAllocation(PartitionKey='1',RowKey='14')'
+Request method: 'PUT'
+Request headers:
+    'Content-Type': 'application/json'
+    'Content-Length': '368'
+    'x-ms-version': 'REDACTED'
+    'DataServiceVersion': 'REDACTED'
+    'If-Match': '*'
+    'Accept': 'application/json'
+    'x-ms-client-request-id': '5fb7d41d-a3b6-11ee-a88e-f1ad3fb285aa'
+    'x-ms-date': 'REDACTED'
+    'Date': 'Tue, 26 Dec 2023 06:16:59 GMT'
+    'User-Agent': 'azsdk-python-data-tables/12.4.4 Python/3.8.10 (Linux-6.2.0-1018-azure-x86_64-with-glibc2.34)'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+INFO     azure.core.pipeline.policies.http_logging_policy:_universal.py:550 Response status: 204
+Response headers:
+    'Cache-Control': 'no-cache'
+    'Content-Length': '0'
+    'ETag': 'W/"datetime'2023-12-26T06%3A16%3A59.1715752Z'"'
+    'Server': 'Windows-Azure-Table/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'c0d89bcf-1002-006d-1ac3-370b4c000000'
+    'x-ms-client-request-id': '5fb7d41d-a3b6-11ee-a88e-f1ad3fb285aa'
+    'x-ms-version': 'REDACTED'
+    'X-Content-Type-Options': 'REDACTED'
+    'Date': 'Tue, 26 Dec 2023 06:16:58 GMT'
+INFO     root:conftest.py:58 -----------关闭数据库连接-----------

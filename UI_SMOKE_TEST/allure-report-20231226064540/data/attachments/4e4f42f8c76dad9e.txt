@@ -1,0 +1,7 @@
+INFO     root:uidriver.py:606 Getting element text for：nz-header >> li.ant-menu-item-selected:visible
+INFO     root:uidriver.py:180 Finding element nz-header >> li.ant-menu-item-selected:visible
+INFO     root:uidriver.py:621 Got text：Workspace
+INFO     root:uidriver.py:491 Clicking nz-header >> li:text-is('Configuration') and then waiting for a API response with /gp/tenant/get-tenant-branding in it
+INFO     root:uidriver.py:552 Click element：nz-header >> li:text-is('Configuration')
+INFO     root:uidriver.py:506 Found response: https://8automarch2023.sit1.stream.bite.dev/api/gp/tenant/get-tenant-branding
+INFO     root:uidriver.py:917 Getting page Title

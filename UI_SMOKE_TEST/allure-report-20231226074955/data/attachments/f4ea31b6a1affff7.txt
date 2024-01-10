@@ -1,0 +1,226 @@
+INFO     root:mysqldb.py:36 Fetch sql:SELECT currency_code FROM `stream-backend-drive`.meta_currency_tenant 
+            WHERE tenant_id = (SELECT id FROM `stream-backend-account`.tenant WHERE company_name = 'testfeb23');
+INFO     root:mysqldb.py:42 Fetch completed:[{'currency_code': 'USD'}, {'currency_code': 'CNY'}, {'currency_code': 'EUR'}, {'currency_code': 'HKD'}, {'currency_code': 'GBP'}]
+INFO     root:apicaller.py:368 2023-12-26 07:48:15.063414: Request ID: 8dda56de-6cf5-4243-8ba9-210aa6f7d369 | Sending API request- Method: GET | Full Url:https://sit1.stream.bite.dev/integration/v1/assets?includeTemplate=True&includeDraft=False&includeReleased=False | Area: CURRENT | Tenant Id: 1622968583173279746 | Tenant Name: testfeb23 | Headers: {"api-token": "22AJrl7llE9n64Tfwj3ir6uO4d1BtXJjHGYdBZRnJTrCb7ljJGA3aOxrFxw9E7FC1A7FE623B6D34BA2F37605844121", "Content-Type": "application/json"} | Body: null
+INFO     root:apicaller.py:266 Request took 0.3025479316711426 seconds
+INFO     root:apicaller.py:387 2023-12-26 07:48:15.366516: Received API response for: 8dda56de-6cf5-4243-8ba9-210aa6f7d369 | Time taken (seconds): 0.3025479316711426 | Status Code: 200 | Content: b'[{"changingCopyId":null,"id":1622968595648770049,"dataStatus":"valid","dataCreateTime":"2023-02-07T14:40:41.000+00:00","dataUpdateTime":"2022-03-03T03:18:38.000+00:00","logicallyDeleted":false,"fundamentalName":"Private equity fund template","baseCurrency":null,"fundamentalDescription":"There is template description.","fundamentalType":null,"fundamentalStatus":null,"fundamentalLiquidity":null,"fundamentalStyle":null,"fundamentalTargetReturn":null,"fundamentalLiquidityDescription":"","fundamentalFcaApproved":null,"fundamentalTargetFund":"","fundamentalTargetFundManager":"","fundamentalComplianceCheckEmail":"","fundamentalSubscriptionEmail":"","fundamentalOnline":null,"brandingLogo":"","brandingBackgroundImage":"","brandingDetailBackgroundImage":null,"bankName":null,"swiftCode":null,"accountName":null,"account":null,"bankAddress":null,"bankAba":null,"forFurtherCreditTo":null,"draftReferencedId":null,"draftChangeTimes":null,"referencedTemplateId":null,"referencedTemplateName":null,"releasedTimes":null,"createTimes":1675780841158,"productStatus":"TEMPLATE","transferInformation":null,"isInTrash":false,"tenantId":1622968583173279746,"orderIndex":1,"riskReviewerRadioSelectedValue":"RISK","externalAuditors":null,"internalAuditors":null,"notifier":null,"subscriptionApprovalNotifiers":null,"approvalType":"REVIEW","riskReviewers":null,"geographicFocus":null,"productOpenedCountries":null,"strategies":null,"sourceAssetId":null,"sourceTenantId":null,"sourceEnv":null,"sourceLocation":null,"shareToUniverse":false,"mandatoryDocNotifiers":null,"mtCustodian":false}]' | Area: CURRENT | Tenant Id: 1622968583173279746 | Tenant Name: testfeb23 |Curl: curl -X GET -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Content-Length: 4' -H 'Content-Type: application/json' -H 'User-Agent: python-requests/2.27.1' -H 'api-token: 22AJrl7llE9n64Tfwj3ir6uO4d1BtXJjHGYdBZRnJTrCb7ljJGA3aOxrFxw9E7FC1A7FE623B6D34BA2F37605844121' -d null 'https://sit1.stream.bite.dev/integration/v1/assets?includeTemplate=True&includeDraft=False&includeReleased=False'
+INFO     root:mysqldb.py:36 Fetch sql:
+            SELECT concat_result.id, concat_result.gp_account_email, concat_result.permissions, gat.user_name FROM
+                (SELECT ga_gar_pgr_join.id, ga_gar_pgr_join.gp_account_email, GROUP_CONCAT(ga_gar_pgr_join.permission_role_name_eg SEPARATOR ',') as permissions FROM
+                    (SELECT DISTINCT ga_gar_join.id, gp_account_email, permission_role_name_eg FROM 
+                        (SELECT * FROM 
+                        `stream-backend-account`.gp_account as gpa
+                        JOIN
+                            (SELECT permission_role_id, gp_account_id From 
+                            `stream-backend-setting`.gp_account_role
+                            WHERE tenant_id = 1622968583173279746 and data_is_deleted = 0) AS gar
+                        WHERE gpa.id = gar.gp_account_id) as ga_gar_join
+                    JOIN
+                        (SELECT * From `stream-backend-setting`.permission_gp_role
+                        WHERE tenant_id = 1622968583173279746
+                        AND permission_role_name_eg in ('fund administrator')) as pgr
+                    WHERE 
+                        ga_gar_join.permission_role_id = pgr.id) as ga_gar_pgr_join
+                Group by ga_gar_pgr_join.id) as concat_result
+            JOIN 
+                (SELECT * From `stream-backend-account`.gp_account_tenant
+                        WHERE tenant_id = 1622968583173279746 and data_is_deleted = 0 and gp_account_status = "active") as gat
+            WHERE concat_result.id = gat.gp_account_id
+            AND gp_account_email LIKE '%ZZZ%'
+        
+INFO     root:mysqldb.py:42 Fetch completed:[{'id': 1712601953097224194, 'gp_account_email': 'biteinvestmentstestauto+ZZZKatherine.Petersen1@gmail.com', 'permissions': 'Fund Administrator', 'user_name': 'Katherine Petersen'}, {'id': 1713957109718953985, 'gp_account_email': 'ZZZjeffreyfinley5@snapmail.cc', 'permissions': 'Fund Administrator', 'user_name': 'Jeffrey Finley'}]
+INFO     root:mysqldb.py:36 Fetch sql:
+            SELECT concat_result.id, concat_result.gp_account_email, concat_result.permissions, gat.user_name FROM
+                (SELECT ga_gar_pgr_join.id, ga_gar_pgr_join.gp_account_email, GROUP_CONCAT(ga_gar_pgr_join.permission_role_name_eg SEPARATOR ',') as permissions FROM
+                    (SELECT DISTINCT ga_gar_join.id, gp_account_email, permission_role_name_eg FROM 
+                        (SELECT * FROM 
+                        `stream-backend-account`.gp_account as gpa
+                        JOIN
+                            (SELECT permission_role_id, gp_account_id From 
+                            `stream-backend-setting`.gp_account_role
+                            WHERE tenant_id = 1622968583173279746 and data_is_deleted = 0) AS gar
+                        WHERE gpa.id = gar.gp_account_id) as ga_gar_join
+                    JOIN
+                        (SELECT * From `stream-backend-setting`.permission_gp_role
+                        WHERE tenant_id = 1622968583173279746
+                        AND permission_role_name_eg in ('fund administrator')) as pgr
+                    WHERE 
+                        ga_gar_join.permission_role_id = pgr.id) as ga_gar_pgr_join
+                Group by ga_gar_pgr_join.id) as concat_result
+            JOIN 
+                (SELECT * From `stream-backend-account`.gp_account_tenant
+                        WHERE tenant_id = 1622968583173279746 and data_is_deleted = 0 and gp_account_status = "active") as gat
+            WHERE concat_result.id = gat.gp_account_id
+            AND gp_account_email LIKE '%ZZZ%'
+        
+INFO     root:mysqldb.py:42 Fetch completed:[{'id': 1712601953097224194, 'gp_account_email': 'biteinvestmentstestauto+ZZZKatherine.Petersen1@gmail.com', 'permissions': 'Fund Administrator', 'user_name': 'Katherine Petersen'}, {'id': 1713957109718953985, 'gp_account_email': 'ZZZjeffreyfinley5@snapmail.cc', 'permissions': 'Fund Administrator', 'user_name': 'Jeffrey Finley'}]
+INFO     root:mysqldb.py:36 Fetch sql:
+            SELECT concat_result.id, concat_result.gp_account_email, concat_result.permissions, gat.user_name FROM
+                (SELECT ga_gar_pgr_join.id, ga_gar_pgr_join.gp_account_email, GROUP_CONCAT(ga_gar_pgr_join.permission_role_name_eg SEPARATOR ',') as permissions FROM
+                    (SELECT DISTINCT ga_gar_join.id, gp_account_email, permission_role_name_eg FROM 
+                        (SELECT * FROM 
+                        `stream-backend-account`.gp_account as gpa
+                        JOIN
+                            (SELECT permission_role_id, gp_account_id From 
+                            `stream-backend-setting`.gp_account_role
+                            WHERE tenant_id = 1622968583173279746 and data_is_deleted = 0) AS gar
+                        WHERE gpa.id = gar.gp_account_id) as ga_gar_join
+                    JOIN
+                        (SELECT * From `stream-backend-setting`.permission_gp_role
+                        WHERE tenant_id = 1622968583173279746
+                        AND permission_role_name_eg in ('fund manager admin', 'fund administrator', 'operational support')) as pgr
+                    WHERE 
+                        ga_gar_join.permission_role_id = pgr.id) as ga_gar_pgr_join
+                Group by ga_gar_pgr_join.id) as concat_result
+            JOIN 
+                (SELECT * From `stream-backend-account`.gp_account_tenant
+                        WHERE tenant_id = 1622968583173279746 and data_is_deleted = 0 and gp_account_status = "active") as gat
+            WHERE concat_result.id = gat.gp_account_id
+            AND gp_account_email LIKE '%ZZZ%'
+        
+INFO     root:mysqldb.py:42 Fetch completed:[{'id': 1712601270910455809, 'gp_account_email': 'biteinvestmentstestauto+ZZZJoshua.Tucker0@gmail.com', 'permissions': 'Fund Manager Admin', 'user_name': 'Joshua Tucker'}, {'id': 1712601953097224194, 'gp_account_email': 'biteinvestmentstestauto+ZZZKatherine.Petersen1@gmail.com', 'permissions': 'Fund Administrator', 'user_name': 'Katherine Petersen'}, {'id': 1713957109718953985, 'gp_account_email': 'ZZZjeffreyfinley5@snapmail.cc', 'permissions': 'Fund Manager Admin,Operational Support,Fund Administrator', 'user_name': 'Jeffrey Finley'}]
+INFO     root:mysqldb.py:36 Fetch sql:
+            SELECT concat_result.id, concat_result.gp_account_email, concat_result.permissions, gat.user_name FROM
+                (SELECT ga_gar_pgr_join.id, ga_gar_pgr_join.gp_account_email, GROUP_CONCAT(ga_gar_pgr_join.permission_role_name_eg SEPARATOR ',') as permissions FROM
+                    (SELECT DISTINCT ga_gar_join.id, gp_account_email, permission_role_name_eg FROM 
+                        (SELECT * FROM 
+                        `stream-backend-account`.gp_account as gpa
+                        JOIN
+                            (SELECT permission_role_id, gp_account_id From 
+                            `stream-backend-setting`.gp_account_role
+                            WHERE tenant_id = 1622968583173279746 and data_is_deleted = 0) AS gar
+                        WHERE gpa.id = gar.gp_account_id) as ga_gar_join
+                    JOIN
+                        (SELECT * From `stream-backend-setting`.permission_gp_role
+                        WHERE tenant_id = 1622968583173279746
+                        AND permission_role_name_eg in ('fund director')) as pgr
+                    WHERE 
+                        ga_gar_join.permission_role_id = pgr.id) as ga_gar_pgr_join
+                Group by ga_gar_pgr_join.id) as concat_result
+            JOIN 
+                (SELECT * From `stream-backend-account`.gp_account_tenant
+                        WHERE tenant_id = 1622968583173279746 and data_is_deleted = 0 and gp_account_status = "active") as gat
+            WHERE concat_result.id = gat.gp_account_id
+            AND gp_account_email LIKE '%ZZZ%'
+        
+INFO     root:mysqldb.py:42 Fetch completed:[{'id': 1712602030847037442, 'gp_account_email': 'biteinvestmentstestauto+ZZZHenry.Ewing9@gmail.com', 'permissions': 'Fund Director', 'user_name': 'Henry Ewing'}, {'id': 1713957109718953985, 'gp_account_email': 'ZZZjeffreyfinley5@snapmail.cc', 'permissions': 'Fund Director', 'user_name': 'Jeffrey Finley'}]
+INFO     root:apicaller.py:368 2023-12-26 07:48:16.029789: Request ID: 5d91edcb-4d7b-4b27-ac77-3efd1441ba63 | Sending API request- Method: POST | Full Url:https://sit1.stream.bite.dev/integration/v1/assets | Area: CURRENT | Tenant Id: 1622968583173279746 | Tenant Name: testfeb23 | Headers: {"api-token": "22AJrl7llE9n64Tfwj3ir6uO4d1BtXJjHGYdBZRnJTrCb7ljJGA3aOxrFxw9E7FC1A7FE623B6D34BA2F37605844121", "Content-Type": "application/json"} | Body: {"fundamentalName": "API Test 7145319384595210240", "baseCurrency": "EUR", "fundamentalDescription": "There is template description.", "fundamentalType": "OPEN_ENDED", "fundamentalStatus": "OPEN", "fundamentalLiquidity": "MONTHLY", "fundamentalStyle": "CAPITAL_GROWTH", "fundamentalTargetReturn": "EQ10TO11", "fundamentalLiquidityDescription": "fundamentalLiquidityDescription", "fundamentalFcaApproved": "NO", "fundamentalTargetFund": "", "fundamentalTargetFundManager": "", "fundamentalComplianceCheckEmail": "", "fundamentalSubscriptionEmail": "", "fundamentalOnline": "ALLOW_INVESTMENT", "brandingLogo": "https://paul.file.bite.dev/public/2022/12/06/5d9d8163-1692-475a-92a2-3bfb1e36a0bc.png", "brandingBackgroundImage": "https://bitestreampre.blob.core.windows.net/bitestream/assets/product_bg_template_7.jpg", "brandingDetailBackgroundImage": null, "bankName": "Fakeo Bankeo", "swiftCode": "FAKE123", "accountName": "Bankeo Accounteo", "account": "123456Account", "bankAddress": "1234 Fakeo Bankeo", "bankAba": "bankAba", "forFurtherCreditTo": "forFurtherCreditTo", "referencedTemplateId": 1622968595648770049, "productStatus": "DRAFT", "transferInformation": "transferInformation", "riskReviewers": ["1713957109718953985"], "notifier": ["1713957109718953985"], "mandatoryDocNotifiers": ["1712601953097224194"], "subscriptionApprovalNotifiers": ["1713957109718953985"], "geographicFocus": ["USA"], "productOpenedCountries": ["US"], "strategies": ["CO_INVESTMENTS"], "shareToUniverse": false}
+INFO     root:apicaller.py:266 Request took 1.7963969707489014 seconds
+INFO     root:apicaller.py:387 2023-12-26 07:48:17.826844: Received API response for: 5d91edcb-4d7b-4b27-ac77-3efd1441ba63 | Time taken (seconds): 1.7963969707489014 | Status Code: 201 | Content: b'{"changingCopyId":null,"id":1739553700808695809,"dataStatus":"valid","dataCreateTime":"2023-02-07T14:40:41.000+00:00","dataUpdateTime":"2023-12-26T07:48:18.000+00:00","logicallyDeleted":false,"fundamentalName":"API Test 7145319384595210240","baseCurrency":"EUR","fundamentalDescription":"There is template description.","fundamentalType":"OPEN_ENDED","fundamentalStatus":"OPEN","fundamentalLiquidity":"MONTHLY","fundamentalStyle":"CAPITAL_GROWTH","fundamentalTargetReturn":"EQ10TO11","fundamentalLiquidityDescription":"fundamentalLiquidityDescription","fundamentalFcaApproved":"NO","fundamentalTargetFund":"","fundamentalTargetFundManager":"","fundamentalComplianceCheckEmail":"","fundamentalSubscriptionEmail":"","fundamentalOnline":"ALLOW_INVESTMENT","brandingLogo":"https://paul.file.bite.dev/public/2022/12/06/5d9d8163-1692-475a-92a2-3bfb1e36a0bc.png","brandingBackgroundImage":"https://bitestreampre.blob.core.windows.net/bitestream/assets/product_bg_template_7.jpg","brandingDetailBackgroundImage":null,"bankName":"Fakeo Bankeo","swiftCode":"FAKE123","accountName":"Bankeo Accounteo","account":"123456Account","bankAddress":"1234 Fakeo Bankeo","bankAba":"bankAba","forFurtherCreditTo":"forFurtherCreditTo","draftReferencedId":null,"draftChangeTimes":null,"referencedTemplateId":1622968595648770049,"referencedTemplateName":"Private equity fund template","releasedTimes":null,"createTimes":1703576896274,"productStatus":"DRAFT","transferInformation":"transferInformation","isInTrash":false,"tenantId":1622968583173279746,"orderIndex":1,"riskReviewerRadioSelectedValue":"RISK","externalAuditors":null,"internalAuditors":null,"notifier":["1713957109718953985"],"subscriptionApprovalNotifiers":["1713957109718953985"],"approvalType":"REVIEW","riskReviewers":["1713957109718953985"],"geographicFocus":["USA"],"productOpenedCountries":["US"],"strategies":["CO_INVESTMENTS"],"sourceAssetId":null,"sourceTenantId":null,"sourceEnv":null,"sourceLocation":null,"shareToUniverse":false,"mandatoryDocNotifiers":["1712601953097224194"],"mtCustodian":false}' | Area: CURRENT | Tenant Id: 1622968583173279746 | Tenant Name: testfeb23 |Curl: curl -X POST -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Content-Length: 1496' -H 'Content-Type: application/json' -H 'User-Agent: python-requests/2.27.1' -H 'api-token: 22AJrl7llE9n64Tfwj3ir6uO4d1BtXJjHGYdBZRnJTrCb7ljJGA3aOxrFxw9E7FC1A7FE623B6D34BA2F37605844121' -d '{"fundamentalName": "API Test 7145319384595210240", "baseCurrency": "EUR", "fundamentalDescription": "There is template description.", "fundamentalType": "OPEN_ENDED", "fundamentalStatus": "OPEN", "fundamentalLiquidity": "MONTHLY", "fundamentalStyle": "CAPITAL_GROWTH", "fundamentalTargetReturn": "EQ10TO11", "fundamentalLiquidityDescription": "fundamentalLiquidityDescription", "fundamentalFcaApproved": "NO", "fundamentalTargetFund": "", "fundamentalTargetFundManager": "", "fundamentalComplianceCheckEmail": "", "fundamentalSubscriptionEmail": "", "fundamentalOnline": "ALLOW_INVESTMENT", "brandingLogo": "https://paul.file.bite.dev/public/2022/12/06/5d9d8163-1692-475a-92a2-3bfb1e36a0bc.png", "brandingBackgroundImage": "https://bitestreampre.blob.core.windows.net/bitestream/assets/product_bg_template_7.jpg", "brandingDetailBackgroundImage": null, "bankName": "Fakeo Bankeo", "swiftCode": "FAKE123", "accountName": "Bankeo Accounteo", "account": "123456Account", "bankAddress": "1234 Fakeo Bankeo", "bankAba": "bankAba", "forFurtherCreditTo": "forFurtherCreditTo", "referencedTemplateId": 1622968595648770049, "productStatus": "DRAFT", "transferInformation": "transferInformation", "riskReviewers": ["1713957109718953985"], "notifier": ["1713957109718953985"], "mandatoryDocNotifiers": ["1712601953097224194"], "subscriptionApprovalNotifiers": ["1713957109718953985"], "geographicFocus": ["USA"], "productOpenedCountries": ["US"], "strategies": ["CO_INVESTMENTS"], "shareToUniverse": false}' https://sit1.stream.bite.dev/integration/v1/assets
+INFO     root:apicaller.py:368 2023-12-26 07:48:17.827803: Request ID: 7192c7f1-7c5b-4359-a62a-6a9ceb162efd | Sending API request- Method: PUT | Full Url:https://sit1.stream.bite.dev/integration/v1/assets/1739553700808695809 | Area: CURRENT | Tenant Id: 1622968583173279746 | Tenant Name: testfeb23 | Headers: {"api-token": "22AJrl7llE9n64Tfwj3ir6uO4d1BtXJjHGYdBZRnJTrCb7ljJGA3aOxrFxw9E7FC1A7FE623B6D34BA2F37605844121", "Content-Type": "application/json"} | Body: {"fundamentalName": "API Test 7145319384595210240", "baseCurrency": "EUR", "fundamentalDescription": "There is template description.", "fundamentalType": "OPEN_ENDED", "fundamentalStatus": "OPEN", "fundamentalLiquidity": "MONTHLY", "fundamentalStyle": "CAPITAL_GROWTH", "fundamentalTargetReturn": "EQ10TO11", "fundamentalLiquidityDescription": "fundamentalLiquidityDescription", "fundamentalFcaApproved": "NO", "fundamentalTargetFund": "", "fundamentalTargetFundManager": "", "fundamentalComplianceCheckEmail": "", "fundamentalSubscriptionEmail": "", "fundamentalOnline": "ALLOW_INVESTMENT", "brandingLogo": "https://paul.file.bite.dev/public/2022/12/06/5d9d8163-1692-475a-92a2-3bfb1e36a0bc.png", "brandingBackgroundImage": "https://bitestreampre.blob.core.windows.net/bitestream/assets/product_bg_template_7.jpg", "brandingDetailBackgroundImage": null, "bankName": "Fakeo Bankeo", "swiftCode": "FAKE123", "accountName": "Bankeo Accounteo", "account": "123456Account", "bankAddress": "1234 Fakeo Bankeo", "bankAba": "bankAba", "forFurtherCreditTo": "forFurtherCreditTo", "referencedTemplateId": 1622968595648770049, "productStatus": "DRAFT", "transferInformation": "transferInformation", "riskReviewers": ["1713957109718953985"], "notifier": ["1713957109718953985"], "mandatoryDocNotifiers": ["1712601953097224194"], "subscriptionApprovalNotifiers": ["1713957109718953985"], "geographicFocus": ["USA"], "productOpenedCountries": ["US"], "strategies": ["CO_INVESTMENTS"], "shareToUniverse": false}
+INFO     root:apicaller.py:266 Request took 0.3757603168487549 seconds
+INFO     root:apicaller.py:387 2023-12-26 07:48:18.204143: Received API response for: 7192c7f1-7c5b-4359-a62a-6a9ceb162efd | Time taken (seconds): 0.3757603168487549 | Status Code: 200 | Content: b'{"changingCopyId":null,"id":1739553700808695809,"dataStatus":"valid","dataCreateTime":"2023-02-07T14:40:41.000+00:00","dataUpdateTime":"2023-12-26T07:48:18.000+00:00","logicallyDeleted":false,"fundamentalName":"API Test 7145319384595210240","baseCurrency":"EUR","fundamentalDescription":"There is template description.","fundamentalType":"OPEN_ENDED","fundamentalStatus":"OPEN","fundamentalLiquidity":"MONTHLY","fundamentalStyle":"CAPITAL_GROWTH","fundamentalTargetReturn":"EQ10TO11","fundamentalLiquidityDescription":"fundamentalLiquidityDescription","fundamentalFcaApproved":"NO","fundamentalTargetFund":"","fundamentalTargetFundManager":"","fundamentalComplianceCheckEmail":"","fundamentalSubscriptionEmail":"","fundamentalOnline":"ALLOW_INVESTMENT","brandingLogo":"https://paul.file.bite.dev/public/2022/12/06/5d9d8163-1692-475a-92a2-3bfb1e36a0bc.png","brandingBackgroundImage":"https://bitestreampre.blob.core.windows.net/bitestream/assets/product_bg_template_7.jpg","brandingDetailBackgroundImage":null,"bankName":"Fakeo Bankeo","swiftCode":"FAKE123","accountName":"Bankeo Accounteo","account":"123456Account","bankAddress":"1234 Fakeo Bankeo","bankAba":"bankAba","forFurtherCreditTo":"forFurtherCreditTo","draftReferencedId":null,"draftChangeTimes":null,"referencedTemplateId":1622968595648770049,"referencedTemplateName":"Private equity fund template","releasedTimes":null,"createTimes":1703576896274,"productStatus":"DRAFT","transferInformation":"transferInformation","isInTrash":false,"tenantId":1622968583173279746,"orderIndex":1,"riskReviewerRadioSelectedValue":"RISK","externalAuditors":null,"internalAuditors":null,"notifier":["1713957109718953985"],"subscriptionApprovalNotifiers":["1713957109718953985"],"approvalType":"REVIEW","riskReviewers":["1713957109718953985"],"geographicFocus":["USA"],"productOpenedCountries":["US"],"strategies":["CO_INVESTMENTS"],"sourceAssetId":null,"sourceTenantId":null,"sourceEnv":null,"sourceLocation":null,"shareToUniverse":false,"mandatoryDocNotifiers":["1712601953097224194"],"mtCustodian":false}' | Area: CURRENT | Tenant Id: 1622968583173279746 | Tenant Name: testfeb23 |Curl: curl -X PUT -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Content-Length: 1496' -H 'Content-Type: application/json' -H 'User-Agent: python-requests/2.27.1' -H 'api-token: 22AJrl7llE9n64Tfwj3ir6uO4d1BtXJjHGYdBZRnJTrCb7ljJGA3aOxrFxw9E7FC1A7FE623B6D34BA2F37605844121' -d '{"fundamentalName": "API Test 7145319384595210240", "baseCurrency": "EUR", "fundamentalDescription": "There is template description.", "fundamentalType": "OPEN_ENDED", "fundamentalStatus": "OPEN", "fundamentalLiquidity": "MONTHLY", "fundamentalStyle": "CAPITAL_GROWTH", "fundamentalTargetReturn": "EQ10TO11", "fundamentalLiquidityDescription": "fundamentalLiquidityDescription", "fundamentalFcaApproved": "NO", "fundamentalTargetFund": "", "fundamentalTargetFundManager": "", "fundamentalComplianceCheckEmail": "", "fundamentalSubscriptionEmail": "", "fundamentalOnline": "ALLOW_INVESTMENT", "brandingLogo": "https://paul.file.bite.dev/public/2022/12/06/5d9d8163-1692-475a-92a2-3bfb1e36a0bc.png", "brandingBackgroundImage": "https://bitestreampre.blob.core.windows.net/bitestream/assets/product_bg_template_7.jpg", "brandingDetailBackgroundImage": null, "bankName": "Fakeo Bankeo", "swiftCode": "FAKE123", "accountName": "Bankeo Accounteo", "account": "123456Account", "bankAddress": "1234 Fakeo Bankeo", "bankAba": "bankAba", "forFurtherCreditTo": "forFurtherCreditTo", "referencedTemplateId": 1622968595648770049, "productStatus": "DRAFT", "transferInformation": "transferInformation", "riskReviewers": ["1713957109718953985"], "notifier": ["1713957109718953985"], "mandatoryDocNotifiers": ["1712601953097224194"], "subscriptionApprovalNotifiers": ["1713957109718953985"], "geographicFocus": ["USA"], "productOpenedCountries": ["US"], "strategies": ["CO_INVESTMENTS"], "shareToUniverse": false}' https://sit1.stream.bite.dev/integration/v1/assets/1739553700808695809
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalName
+INFO     root:complexassertions.py:93 Comparing Field: baseCurrency
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalDescription
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalType
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalStatus
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalLiquidity
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalStyle
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalTargetReturn
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalLiquidityDescription
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalFcaApproved
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalTargetFund
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalTargetFundManager
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalComplianceCheckEmail
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalSubscriptionEmail
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalOnline
+INFO     root:complexassertions.py:93 Comparing Field: brandingLogo
+INFO     root:complexassertions.py:93 Comparing Field: brandingBackgroundImage
+INFO     root:complexassertions.py:93 Comparing Field: brandingDetailBackgroundImage
+INFO     root:complexassertions.py:93 Comparing Field: bankName
+INFO     root:complexassertions.py:93 Comparing Field: swiftCode
+INFO     root:complexassertions.py:93 Comparing Field: accountName
+INFO     root:complexassertions.py:93 Comparing Field: account
+INFO     root:complexassertions.py:93 Comparing Field: bankAddress
+INFO     root:complexassertions.py:93 Comparing Field: bankAba
+INFO     root:complexassertions.py:93 Comparing Field: forFurtherCreditTo
+INFO     root:complexassertions.py:93 Comparing Field: referencedTemplateId
+INFO     root:complexassertions.py:93 Comparing Field: productStatus
+INFO     root:complexassertions.py:93 Comparing Field: transferInformation
+INFO     root:complexassertions.py:93 Comparing Field: riskReviewers
+INFO     root:complexassertions.py:93 Comparing Field: notifier
+INFO     root:complexassertions.py:93 Comparing Field: mandatoryDocNotifiers
+INFO     root:complexassertions.py:93 Comparing Field: subscriptionApprovalNotifiers
+INFO     root:complexassertions.py:93 Comparing Field: geographicFocus
+INFO     root:complexassertions.py:93 Comparing Field: productOpenedCountries
+INFO     root:complexassertions.py:93 Comparing Field: strategies
+INFO     root:complexassertions.py:93 Comparing Field: shareToUniverse
+INFO     root:apicaller.py:368 2023-12-26 07:48:18.210529: Request ID: 37feef91-61b2-4856-ad82-34c563703a3e | Sending API request- Method: PUT | Full Url:https://sit1.stream.bite.dev/integration/v1/assets/1739553700808695809 | Area: CURRENT | Tenant Id: 1622968583173279746 | Tenant Name: testfeb23 | Headers: {"api-token": "22AJrl7llE9n64Tfwj3ir6uO4d1BtXJjHGYdBZRnJTrCb7ljJGA3aOxrFxw9E7FC1A7FE623B6D34BA2F37605844121", "Content-Type": "application/json"} | Body: {"fundamentalName": "API Test 7145319384595210240", "baseCurrency": "EUR", "fundamentalDescription": "There is template description.", "fundamentalType": "OPEN_ENDED", "fundamentalStatus": "OPEN", "fundamentalLiquidity": "MONTHLY", "fundamentalStyle": "CAPITAL_GROWTH", "fundamentalTargetReturn": "EQ10TO11", "fundamentalLiquidityDescription": "fundamentalLiquidityDescription", "fundamentalFcaApproved": "YES", "fundamentalTargetFund": "", "fundamentalTargetFundManager": "", "fundamentalComplianceCheckEmail": "", "fundamentalSubscriptionEmail": "", "fundamentalOnline": "ALLOW_INVESTMENT", "brandingLogo": "https://paul.file.bite.dev/public/2022/12/06/5d9d8163-1692-475a-92a2-3bfb1e36a0bc.png", "brandingBackgroundImage": "https://bitestreampre.blob.core.windows.net/bitestream/assets/product_bg_template_7.jpg", "brandingDetailBackgroundImage": null, "bankName": "Fakeo Bankeo", "swiftCode": "FAKE123", "accountName": "Bankeo Accounteo", "account": "123456Account", "bankAddress": "1234 Fakeo Bankeo", "bankAba": "bankAba", "forFurtherCreditTo": "forFurtherCreditTo", "referencedTemplateId": 1622968595648770049, "productStatus": "DRAFT", "transferInformation": "transferInformation", "riskReviewers": ["1713957109718953985"], "notifier": ["1713957109718953985"], "mandatoryDocNotifiers": ["1712601953097224194"], "subscriptionApprovalNotifiers": ["1713957109718953985"], "geographicFocus": ["USA"], "productOpenedCountries": ["GB"], "strategies": ["CO_INVESTMENTS"], "shareToUniverse": false}
+INFO     root:apicaller.py:266 Request took 0.36424946784973145 seconds
+INFO     root:apicaller.py:387 2023-12-26 07:48:18.575404: Received API response for: 37feef91-61b2-4856-ad82-34c563703a3e | Time taken (seconds): 0.36424946784973145 | Status Code: 200 | Content: b'{"changingCopyId":null,"id":1739553700808695809,"dataStatus":"valid","dataCreateTime":"2023-02-07T14:40:41.000+00:00","dataUpdateTime":"2023-12-26T07:48:18.000+00:00","logicallyDeleted":false,"fundamentalName":"API Test 7145319384595210240","baseCurrency":"EUR","fundamentalDescription":"There is template description.","fundamentalType":"OPEN_ENDED","fundamentalStatus":"OPEN","fundamentalLiquidity":"MONTHLY","fundamentalStyle":"CAPITAL_GROWTH","fundamentalTargetReturn":"EQ10TO11","fundamentalLiquidityDescription":"fundamentalLiquidityDescription","fundamentalFcaApproved":"YES","fundamentalTargetFund":"","fundamentalTargetFundManager":"","fundamentalComplianceCheckEmail":"","fundamentalSubscriptionEmail":"","fundamentalOnline":"ALLOW_INVESTMENT","brandingLogo":"https://paul.file.bite.dev/public/2022/12/06/5d9d8163-1692-475a-92a2-3bfb1e36a0bc.png","brandingBackgroundImage":"https://bitestreampre.blob.core.windows.net/bitestream/assets/product_bg_template_7.jpg","brandingDetailBackgroundImage":null,"bankName":"Fakeo Bankeo","swiftCode":"FAKE123","accountName":"Bankeo Accounteo","account":"123456Account","bankAddress":"1234 Fakeo Bankeo","bankAba":"bankAba","forFurtherCreditTo":"forFurtherCreditTo","draftReferencedId":null,"draftChangeTimes":null,"referencedTemplateId":1622968595648770049,"referencedTemplateName":"Private equity fund template","releasedTimes":null,"createTimes":1703576896274,"productStatus":"DRAFT","transferInformation":"transferInformation","isInTrash":false,"tenantId":1622968583173279746,"orderIndex":1,"riskReviewerRadioSelectedValue":"RISK","externalAuditors":null,"internalAuditors":null,"notifier":["1713957109718953985"],"subscriptionApprovalNotifiers":["1713957109718953985"],"approvalType":"REVIEW","riskReviewers":["1713957109718953985"],"geographicFocus":["USA"],"productOpenedCountries":["GB"],"strategies":["CO_INVESTMENTS"],"sourceAssetId":null,"sourceTenantId":null,"sourceEnv":null,"sourceLocation":null,"shareToUniverse":false,"mandatoryDocNotifiers":["1712601953097224194"],"mtCustodian":false}' | Area: CURRENT | Tenant Id: 1622968583173279746 | Tenant Name: testfeb23 |Curl: curl -X PUT -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Content-Length: 1497' -H 'Content-Type: application/json' -H 'User-Agent: python-requests/2.27.1' -H 'api-token: 22AJrl7llE9n64Tfwj3ir6uO4d1BtXJjHGYdBZRnJTrCb7ljJGA3aOxrFxw9E7FC1A7FE623B6D34BA2F37605844121' -d '{"fundamentalName": "API Test 7145319384595210240", "baseCurrency": "EUR", "fundamentalDescription": "There is template description.", "fundamentalType": "OPEN_ENDED", "fundamentalStatus": "OPEN", "fundamentalLiquidity": "MONTHLY", "fundamentalStyle": "CAPITAL_GROWTH", "fundamentalTargetReturn": "EQ10TO11", "fundamentalLiquidityDescription": "fundamentalLiquidityDescription", "fundamentalFcaApproved": "YES", "fundamentalTargetFund": "", "fundamentalTargetFundManager": "", "fundamentalComplianceCheckEmail": "", "fundamentalSubscriptionEmail": "", "fundamentalOnline": "ALLOW_INVESTMENT", "brandingLogo": "https://paul.file.bite.dev/public/2022/12/06/5d9d8163-1692-475a-92a2-3bfb1e36a0bc.png", "brandingBackgroundImage": "https://bitestreampre.blob.core.windows.net/bitestream/assets/product_bg_template_7.jpg", "brandingDetailBackgroundImage": null, "bankName": "Fakeo Bankeo", "swiftCode": "FAKE123", "accountName": "Bankeo Accounteo", "account": "123456Account", "bankAddress": "1234 Fakeo Bankeo", "bankAba": "bankAba", "forFurtherCreditTo": "forFurtherCreditTo", "referencedTemplateId": 1622968595648770049, "productStatus": "DRAFT", "transferInformation": "transferInformation", "riskReviewers": ["1713957109718953985"], "notifier": ["1713957109718953985"], "mandatoryDocNotifiers": ["1712601953097224194"], "subscriptionApprovalNotifiers": ["1713957109718953985"], "geographicFocus": ["USA"], "productOpenedCountries": ["GB"], "strategies": ["CO_INVESTMENTS"], "shareToUniverse": false}' https://sit1.stream.bite.dev/integration/v1/assets/1739553700808695809
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalName
+INFO     root:complexassertions.py:93 Comparing Field: baseCurrency
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalDescription
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalType
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalStatus
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalLiquidity
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalStyle
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalTargetReturn
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalLiquidityDescription
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalFcaApproved
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalTargetFund
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalTargetFundManager
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalComplianceCheckEmail
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalSubscriptionEmail
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalOnline
+INFO     root:complexassertions.py:93 Comparing Field: brandingLogo
+INFO     root:complexassertions.py:93 Comparing Field: brandingBackgroundImage
+INFO     root:complexassertions.py:93 Comparing Field: brandingDetailBackgroundImage
+INFO     root:complexassertions.py:93 Comparing Field: bankName
+INFO     root:complexassertions.py:93 Comparing Field: swiftCode
+INFO     root:complexassertions.py:93 Comparing Field: accountName
+INFO     root:complexassertions.py:93 Comparing Field: account
+INFO     root:complexassertions.py:93 Comparing Field: bankAddress
+INFO     root:complexassertions.py:93 Comparing Field: bankAba
+INFO     root:complexassertions.py:93 Comparing Field: forFurtherCreditTo
+INFO     root:complexassertions.py:93 Comparing Field: referencedTemplateId
+INFO     root:complexassertions.py:93 Comparing Field: productStatus
+INFO     root:complexassertions.py:93 Comparing Field: transferInformation
+INFO     root:complexassertions.py:93 Comparing Field: riskReviewers
+INFO     root:complexassertions.py:93 Comparing Field: notifier
+INFO     root:complexassertions.py:93 Comparing Field: mandatoryDocNotifiers
+INFO     root:complexassertions.py:93 Comparing Field: subscriptionApprovalNotifiers
+INFO     root:complexassertions.py:93 Comparing Field: geographicFocus
+INFO     root:complexassertions.py:93 Comparing Field: productOpenedCountries
+INFO     root:complexassertions.py:93 Comparing Field: strategies
+INFO     root:complexassertions.py:93 Comparing Field: shareToUniverse
+INFO     root:apicaller.py:368 2023-12-26 07:48:18.582812: Request ID: 54526624-c343-4c55-9302-900e5f112b57 | Sending API request- Method: PUT | Full Url:https://sit1.stream.bite.dev/integration/v1/assets/1739553700808695809 | Area: CURRENT | Tenant Id: 1622968583173279746 | Tenant Name: testfeb23 | Headers: {"api-token": "22AJrl7llE9n64Tfwj3ir6uO4d1BtXJjHGYdBZRnJTrCb7ljJGA3aOxrFxw9E7FC1A7FE623B6D34BA2F37605844121", "Content-Type": "application/json"} | Body: {"fundamentalName": "API Test 7145319384595210240", "baseCurrency": "EUR", "fundamentalDescription": "There is template description.", "fundamentalType": "OPEN_ENDED", "fundamentalStatus": "OPEN", "fundamentalLiquidity": "MONTHLY", "fundamentalStyle": "CAPITAL_GROWTH", "fundamentalTargetReturn": "EQ10TO11", "fundamentalLiquidityDescription": "fundamentalLiquidityDescription", "fundamentalFcaApproved": "NO", "fundamentalTargetFund": "", "fundamentalTargetFundManager": "", "fundamentalComplianceCheckEmail": "", "fundamentalSubscriptionEmail": "", "fundamentalOnline": "ALLOW_INVESTMENT", "brandingLogo": "https://paul.file.bite.dev/public/2022/12/06/5d9d8163-1692-475a-92a2-3bfb1e36a0bc.png", "brandingBackgroundImage": "https://bitestreampre.blob.core.windows.net/bitestream/assets/product_bg_template_7.jpg", "brandingDetailBackgroundImage": null, "bankName": "Fakeo Bankeo", "swiftCode": "FAKE123", "accountName": "Bankeo Accounteo", "account": "123456Account", "bankAddress": "1234 Fakeo Bankeo", "bankAba": "bankAba", "forFurtherCreditTo": "forFurtherCreditTo", "referencedTemplateId": 1622968595648770049, "productStatus": "DRAFT", "transferInformation": "transferInformation", "riskReviewers": ["1713957109718953985"], "notifier": ["1713957109718953985"], "mandatoryDocNotifiers": ["1712601953097224194"], "subscriptionApprovalNotifiers": ["1713957109718953985"], "geographicFocus": ["USA"], "productOpenedCountries": ["CN"], "strategies": ["CO_INVESTMENTS"], "shareToUniverse": false}
+INFO     root:apicaller.py:266 Request took 0.40205836296081543 seconds
+INFO     root:apicaller.py:387 2023-12-26 07:48:18.985460: Received API response for: 54526624-c343-4c55-9302-900e5f112b57 | Time taken (seconds): 0.40205836296081543 | Status Code: 200 | Content: b'{"changingCopyId":null,"id":1739553700808695809,"dataStatus":"valid","dataCreateTime":"2023-02-07T14:40:41.000+00:00","dataUpdateTime":"2023-12-26T07:48:19.000+00:00","logicallyDeleted":false,"fundamentalName":"API Test 7145319384595210240","baseCurrency":"EUR","fundamentalDescription":"There is template description.","fundamentalType":"OPEN_ENDED","fundamentalStatus":"OPEN","fundamentalLiquidity":"MONTHLY","fundamentalStyle":"CAPITAL_GROWTH","fundamentalTargetReturn":"EQ10TO11","fundamentalLiquidityDescription":"fundamentalLiquidityDescription","fundamentalFcaApproved":"NO","fundamentalTargetFund":"","fundamentalTargetFundManager":"","fundamentalComplianceCheckEmail":"","fundamentalSubscriptionEmail":"","fundamentalOnline":"ALLOW_INVESTMENT","brandingLogo":"https://paul.file.bite.dev/public/2022/12/06/5d9d8163-1692-475a-92a2-3bfb1e36a0bc.png","brandingBackgroundImage":"https://bitestreampre.blob.core.windows.net/bitestream/assets/product_bg_template_7.jpg","brandingDetailBackgroundImage":null,"bankName":"Fakeo Bankeo","swiftCode":"FAKE123","accountName":"Bankeo Accounteo","account":"123456Account","bankAddress":"1234 Fakeo Bankeo","bankAba":"bankAba","forFurtherCreditTo":"forFurtherCreditTo","draftReferencedId":null,"draftChangeTimes":null,"referencedTemplateId":1622968595648770049,"referencedTemplateName":"Private equity fund template","releasedTimes":null,"createTimes":1703576896274,"productStatus":"DRAFT","transferInformation":"transferInformation","isInTrash":false,"tenantId":1622968583173279746,"orderIndex":1,"riskReviewerRadioSelectedValue":"RISK","externalAuditors":null,"internalAuditors":null,"notifier":["1713957109718953985"],"subscriptionApprovalNotifiers":["1713957109718953985"],"approvalType":"REVIEW","riskReviewers":["1713957109718953985"],"geographicFocus":["USA"],"productOpenedCountries":["CN"],"strategies":["CO_INVESTMENTS"],"sourceAssetId":null,"sourceTenantId":null,"sourceEnv":null,"sourceLocation":null,"shareToUniverse":false,"mandatoryDocNotifiers":["1712601953097224194"],"mtCustodian":false}' | Area: CURRENT | Tenant Id: 1622968583173279746 | Tenant Name: testfeb23 |Curl: curl -X PUT -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Content-Length: 1496' -H 'Content-Type: application/json' -H 'User-Agent: python-requests/2.27.1' -H 'api-token: 22AJrl7llE9n64Tfwj3ir6uO4d1BtXJjHGYdBZRnJTrCb7ljJGA3aOxrFxw9E7FC1A7FE623B6D34BA2F37605844121' -d '{"fundamentalName": "API Test 7145319384595210240", "baseCurrency": "EUR", "fundamentalDescription": "There is template description.", "fundamentalType": "OPEN_ENDED", "fundamentalStatus": "OPEN", "fundamentalLiquidity": "MONTHLY", "fundamentalStyle": "CAPITAL_GROWTH", "fundamentalTargetReturn": "EQ10TO11", "fundamentalLiquidityDescription": "fundamentalLiquidityDescription", "fundamentalFcaApproved": "NO", "fundamentalTargetFund": "", "fundamentalTargetFundManager": "", "fundamentalComplianceCheckEmail": "", "fundamentalSubscriptionEmail": "", "fundamentalOnline": "ALLOW_INVESTMENT", "brandingLogo": "https://paul.file.bite.dev/public/2022/12/06/5d9d8163-1692-475a-92a2-3bfb1e36a0bc.png", "brandingBackgroundImage": "https://bitestreampre.blob.core.windows.net/bitestream/assets/product_bg_template_7.jpg", "brandingDetailBackgroundImage": null, "bankName": "Fakeo Bankeo", "swiftCode": "FAKE123", "accountName": "Bankeo Accounteo", "account": "123456Account", "bankAddress": "1234 Fakeo Bankeo", "bankAba": "bankAba", "forFurtherCreditTo": "forFurtherCreditTo", "referencedTemplateId": 1622968595648770049, "productStatus": "DRAFT", "transferInformation": "transferInformation", "riskReviewers": ["1713957109718953985"], "notifier": ["1713957109718953985"], "mandatoryDocNotifiers": ["1712601953097224194"], "subscriptionApprovalNotifiers": ["1713957109718953985"], "geographicFocus": ["USA"], "productOpenedCountries": ["CN"], "strategies": ["CO_INVESTMENTS"], "shareToUniverse": false}' https://sit1.stream.bite.dev/integration/v1/assets/1739553700808695809
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalName
+INFO     root:complexassertions.py:93 Comparing Field: baseCurrency
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalDescription
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalType
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalStatus
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalLiquidity
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalStyle
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalTargetReturn
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalLiquidityDescription
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalFcaApproved
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalTargetFund
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalTargetFundManager
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalComplianceCheckEmail
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalSubscriptionEmail
+INFO     root:complexassertions.py:93 Comparing Field: fundamentalOnline
+INFO     root:complexassertions.py:93 Comparing Field: brandingLogo
+INFO     root:complexassertions.py:93 Comparing Field: brandingBackgroundImage
+INFO     root:complexassertions.py:93 Comparing Field: brandingDetailBackgroundImage
+INFO     root:complexassertions.py:93 Comparing Field: bankName
+INFO     root:complexassertions.py:93 Comparing Field: swiftCode
+INFO     root:complexassertions.py:93 Comparing Field: accountName
+INFO     root:complexassertions.py:93 Comparing Field: account
+INFO     root:complexassertions.py:93 Comparing Field: bankAddress
+INFO     root:complexassertions.py:93 Comparing Field: bankAba
+INFO     root:complexassertions.py:93 Comparing Field: forFurtherCreditTo
+INFO     root:complexassertions.py:93 Comparing Field: referencedTemplateId
+INFO     root:complexassertions.py:93 Comparing Field: productStatus
+INFO     root:complexassertions.py:93 Comparing Field: transferInformation
+INFO     root:complexassertions.py:93 Comparing Field: riskReviewers
+INFO     root:complexassertions.py:93 Comparing Field: notifier
+INFO     root:complexassertions.py:93 Comparing Field: mandatoryDocNotifiers
+INFO     root:complexassertions.py:93 Comparing Field: subscriptionApprovalNotifiers
+INFO     root:complexassertions.py:93 Comparing Field: geographicFocus
+INFO     root:complexassertions.py:93 Comparing Field: productOpenedCountries
+INFO     root:complexassertions.py:93 Comparing Field: strategies
+INFO     root:complexassertions.py:93 Comparing Field: shareToUniverse

@@ -1,8 +1,25 @@
 {
   "directories": [
-    "reports1",
-    "allure-report",
-    ".git",
-    ".idea"
+    {
+      "CUSTOM_TEST": [
+        "allure-report-20231226073155",
+        "allure-report-20231226071806",
+        "allure-report-20231226063649",
+        "allure-report-20231226061717",
+        "allure-report-20231226052337",
+        "allure-report-20231226034300"
+      ],
+      "UI_SMOKE_TEST": [
+        "allure-report-20231226074955",
+        "allure-report-20231226072506",
+        "allure-report-20231226070246",
+        "allure-report-20231226064540",
+        "allure-report-20231226023022",
+        "allure-report-20231226015751",
+        "allure-report-20231225030631",
+        "allure-report-20231225025534",
+        "allure-report-20231225024203"
+      ]
+    }
   ]
 }

@@ -1,0 +1,107 @@
+INFO     root:uidriver.py:157 Open URL：https://20automarch2023.sit1.stream.bite.dev/auth/sign-in
+INFO     root:uidriver.py:258 Entering text alice202201@yeah.net into mat-form-field:has-text('Email') >> input
+INFO     root:uidriver.py:258 Entering text 111 into mat-form-field:has-text('Password') >> input
+INFO     root:uidriver.py:552 Click element：button:has-text('Sign in'):visible
+INFO     root:uidriver.py:606 Getting element text for：snack-bar-container >> nth=-1
+INFO     root:uidriver.py:180 Finding element snack-bar-container >> nth=-1
+INFO     root:uidriver.py:621 Got text：Email or password is incorrect.
+INFO     root:conftest.py:125 Worker ID: gw0, RELEASING area: 20automarch2023 and alt_area: 12automarch2023
+INFO     azure.core.pipeline.policies.http_logging_policy:_universal.py:514 Request URL: 'https://biteautoteststorage.table.core.windows.net/TestDomainAllocation()?$filter=REDACTED'
+Request method: 'GET'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'DataServiceVersion': 'REDACTED'
+    'Accept': 'application/json;odata=minimalmetadata'
+    'x-ms-client-request-id': 'dbad77ca-a3a0-11ee-a88e-f1ad3fb285aa'
+    'x-ms-date': 'REDACTED'
+    'Date': 'Tue, 26 Dec 2023 03:42:57 GMT'
+    'User-Agent': 'azsdk-python-data-tables/12.4.4 Python/3.8.10 (Linux-6.2.0-1018-azure-x86_64-with-glibc2.34)'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+INFO     azure.core.pipeline.policies.http_logging_policy:_universal.py:550 Response status: 200
+Response headers:
+    'Cache-Control': 'no-cache'
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json;odata=minimalmetadata;streaming=true;charset=utf-8'
+    'Server': 'Windows-Azure-Table/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '7fea5fc4-1002-0042-1aad-370687000000'
+    'x-ms-client-request-id': 'dbad77ca-a3a0-11ee-a88e-f1ad3fb285aa'
+    'x-ms-version': 'REDACTED'
+    'X-Content-Type-Options': 'REDACTED'
+    'Date': 'Tue, 26 Dec 2023 03:42:57 GMT'
+INFO     azure.core.pipeline.policies.http_logging_policy:_universal.py:511 Request URL: 'https://biteautoteststorage.table.core.windows.net/TestDomainAllocation(PartitionKey='1',RowKey='21')'
+Request method: 'PUT'
+Request headers:
+    'Content-Type': 'application/json'
+    'Content-Length': '367'
+    'x-ms-version': 'REDACTED'
+    'DataServiceVersion': 'REDACTED'
+    'If-Match': '*'
+    'Accept': 'application/json'
+    'x-ms-client-request-id': 'dbad77cb-a3a0-11ee-a88e-f1ad3fb285aa'
+    'x-ms-date': 'REDACTED'
+    'Date': 'Tue, 26 Dec 2023 03:42:57 GMT'
+    'User-Agent': 'azsdk-python-data-tables/12.4.4 Python/3.8.10 (Linux-6.2.0-1018-azure-x86_64-with-glibc2.34)'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+INFO     azure.core.pipeline.policies.http_logging_policy:_universal.py:550 Response status: 204
+Response headers:
+    'Cache-Control': 'no-cache'
+    'Content-Length': '0'
+    'ETag': 'W/"datetime'2023-12-26T03%3A42%3A57.618766Z'"'
+    'Server': 'Windows-Azure-Table/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '7fea5fd5-1002-0042-28ad-370687000000'
+    'x-ms-client-request-id': 'dbad77cb-a3a0-11ee-a88e-f1ad3fb285aa'
+    'x-ms-version': 'REDACTED'
+    'X-Content-Type-Options': 'REDACTED'
+    'Date': 'Tue, 26 Dec 2023 03:42:57 GMT'
+INFO     azure.core.pipeline.policies.http_logging_policy:_universal.py:514 Request URL: 'https://biteautoteststorage.table.core.windows.net/TestDomainAllocation()?$filter=REDACTED'
+Request method: 'GET'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'DataServiceVersion': 'REDACTED'
+    'Accept': 'application/json;odata=minimalmetadata'
+    'x-ms-client-request-id': 'dbad77cc-a3a0-11ee-a88e-f1ad3fb285aa'
+    'x-ms-date': 'REDACTED'
+    'Date': 'Tue, 26 Dec 2023 03:42:57 GMT'
+    'User-Agent': 'azsdk-python-data-tables/12.4.4 Python/3.8.10 (Linux-6.2.0-1018-azure-x86_64-with-glibc2.34)'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+INFO     azure.core.pipeline.policies.http_logging_policy:_universal.py:550 Response status: 200
+Response headers:
+    'Cache-Control': 'no-cache'
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json;odata=minimalmetadata;streaming=true;charset=utf-8'
+    'Server': 'Windows-Azure-Table/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'c5f46de3-e002-0079-5bad-374323000000'
+    'x-ms-client-request-id': 'dbad77cc-a3a0-11ee-a88e-f1ad3fb285aa'
+    'x-ms-version': 'REDACTED'
+    'X-Content-Type-Options': 'REDACTED'
+    'Date': 'Tue, 26 Dec 2023 03:42:57 GMT'
+INFO     azure.core.pipeline.policies.http_logging_policy:_universal.py:511 Request URL: 'https://biteautoteststorage.table.core.windows.net/TestDomainAllocation(PartitionKey='1',RowKey='12')'
+Request method: 'PUT'
+Request headers:
+    'Content-Type': 'application/json'
+    'Content-Length': '368'
+    'x-ms-version': 'REDACTED'
+    'DataServiceVersion': 'REDACTED'
+    'If-Match': '*'
+    'Accept': 'application/json'
+    'x-ms-client-request-id': 'dbad77cd-a3a0-11ee-a88e-f1ad3fb285aa'
+    'x-ms-date': 'REDACTED'
+    'Date': 'Tue, 26 Dec 2023 03:42:58 GMT'
+    'User-Agent': 'azsdk-python-data-tables/12.4.4 Python/3.8.10 (Linux-6.2.0-1018-azure-x86_64-with-glibc2.34)'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+INFO     azure.core.pipeline.policies.http_logging_policy:_universal.py:550 Response status: 204
+Response headers:
+    'Cache-Control': 'no-cache'
+    'Content-Length': '0'
+    'ETag': 'W/"datetime'2023-12-26T03%3A42%3A58.2064266Z'"'
+    'Server': 'Windows-Azure-Table/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'c5f46df2-e002-0079-67ad-374323000000'
+    'x-ms-client-request-id': 'dbad77cd-a3a0-11ee-a88e-f1ad3fb285aa'
+    'x-ms-version': 'REDACTED'
+    'X-Content-Type-Options': 'REDACTED'
+    'Date': 'Tue, 26 Dec 2023 03:42:58 GMT'
+INFO     root:conftest.py:58 -----------关闭数据库连接-----------
