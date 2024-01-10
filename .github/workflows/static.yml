@@ -4,7 +4,7 @@ name: Deploy static content to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -31,6 +31,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          path: my-repo
+      - name: Use Cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            my-repo
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
@@ -38,12 +45,6 @@ jobs:
         with:
           # Upload entire repository
           path: '.'
-
-      # 设置 workflow run 的名称为 "pages build and deployment"
-      - name: Set Workflow Run Name
-        run: echo "pages build and deployment" > workflow_run_name.txt
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          name: "pages build and deployment"
