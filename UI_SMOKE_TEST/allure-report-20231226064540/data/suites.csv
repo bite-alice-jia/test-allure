@@ -1,8 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Tue Dec 26 06:45:29 UTC 2023","Tue Dec 26 06:45:30 UTC 2023","885","Tests.TestCases.Stream_GP.Menu","test_menu","TestMenu","","","Enter Workspace/Pipelines page",""
-"passed","Tue Dec 26 06:45:21 UTC 2023","Tue Dec 26 06:45:22 UTC 2023","1521","Tests.TestCases.Stream_GP.Menu","test_menu","TestMenu","","","Normal scenario: enter the Configuration page",""
-"passed","Tue Dec 26 06:45:30 UTC 2023","Tue Dec 26 06:45:31 UTC 2023","849","Tests.TestCases.Stream_GP.Menu","test_menu","TestMenu","","","Enter Workspace/Asset page",""
-"passed","Tue Dec 26 06:45:19 UTC 2023","Tue Dec 26 06:45:21 UTC 2023","1492","Tests.TestCases.Stream_GP.Menu","test_menu","TestMenu","","","Normal scenario: enter the Workspace page",""
-"passed","Tue Dec 26 06:45:31 UTC 2023","Tue Dec 26 06:45:31 UTC 2023","562","Tests.TestCases.Stream_GP.Menu","test_menu","TestMenu","","","Enter Workspace/Subscription page",""
-"passed","Tue Dec 26 06:45:24 UTC 2023","Tue Dec 26 06:45:29 UTC 2023","5403","Tests.TestCases.Stream_GP.Menu","test_menu","TestMenu","","","Enter Workspace/Investors page",""
-"passed","Tue Dec 26 06:45:23 UTC 2023","Tue Dec 26 06:45:24 UTC 2023","1190","Tests.TestCases.Stream_GP.Menu","test_menu","TestMenu","","","Enter Preferences page",""

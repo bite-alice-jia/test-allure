@@ -1,6 +1,0 @@
-INFO     root:uidriver.py:606 Getting element text for：nz-header >> li.ant-menu-item-selected:visible
-INFO     root:uidriver.py:180 Finding element nz-header >> li.ant-menu-item-selected:visible
-INFO     root:uidriver.py:621 Got text：Workspace
-INFO     root:uidriver.py:552 Click element：nz-header >> li:text-is('Workspace')
-INFO     root:uidriver.py:552 Click element：//nz-sider >> text = Pipelines
-INFO     root:uidriver.py:917 Getting page Title
